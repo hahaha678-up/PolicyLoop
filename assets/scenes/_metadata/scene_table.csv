@@ -1,0 +1,6 @@
+scene,dynamic_bodies,kinematic_bodies,static_bodies
+banana_bowl.usda,"table, bowl, banana",,"Looks, PhysicsMaterial, franka_table, GroundPlane"
+bananas_5_grey_bin.usda,"table, banana, banana_01, banana_02, banana_03, banana_04, grey_bin",,"franka_table, GroundPlane"
+base_empty.usda,table,,"PhysicsMaterial, franka_table, GroundPlane"
+colored_blocks.usda,"table, blue_block, green_block, red_block, yellow_block",,"Looks, PhysicsMaterial, franka_table, GroundPlane"
+rubiks_cube_banana_bowl.usda,"bowl, rubiks_cube, banana, table",,"PhysicsMaterial, franka_table, GroundPlane"

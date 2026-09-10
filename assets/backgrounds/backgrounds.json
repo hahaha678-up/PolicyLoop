@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-07T16:54:37.008979",
+    "total_backgrounds": 4,
+    "total_folders": 1,
+    "image_width": 600
+  },
+  "folders": {
+    "default": {
+      "folder_path": "default",
+      "backgrounds": [
+        {
+          "path": "default/billiard_hall.hdr",
+          "image": "default/billiard_hall.png",
+          "description": ""
+        },
+        {
+          "path": "default/brown_photostudio.hdr",
+          "image": "default/brown_photostudio.png",
+          "description": ""
+        },
+        {
+          "path": "default/empty_warehouse.hdr",
+          "image": "default/empty_warehouse.png",
+          "description": "warehouse,derelict,fluorescent,concrete,industrial,indoor,urban,morning-afternoon,medium contrast,artificial light"
+        },
+        {
+          "path": "default/home_office.exr",
+          "image": "default/home_office.png",
+          "description": ""
+        }
+      ]
+    }
+  }
+}

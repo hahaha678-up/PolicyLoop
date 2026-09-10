@@ -1,0 +1,170 @@
+[
+  {
+    "task_name": "BananaInBowlTask",
+    "instruction": "Pick up the banana and place it in the bowl",
+    "instruction_variants": {
+      "default": "Pick up the banana and place it in the bowl",
+      "vague": "Put the fruit in the bowl",
+      "specific": "Grasp the yellow banana and place it inside the red bowl on the table"
+    },
+    "episode_s": "50",
+    "scene": "banana_bowl.usda",
+    "filename": "benchmark/banana_in_bowl_task.py",
+    "contact_objects": "banana, bowl, table",
+    "terminations": "BananaInBowlTerminations",
+    "attributes": "semantics",
+    "subtasks": "pick_and_place(groups=['banana'], logical=all) score=1.0",
+    "num_sequential_stages": 1,
+    "num_atomic_conditions": 2,
+    "num_subtasks": 1,
+    "difficulty_score": 1,
+    "difficulty_label": "simple"
+  },
+  {
+    "task_name": "BananasInBinThreeTotalTask",
+    "instruction": "Make sure there are 3 (three) bananas in the grey bin.",
+    "instruction_variants": {
+      "default": "Make sure there are 3 (three) bananas in the grey bin.",
+      "vague": "3 bananas in the bin",
+      "specific": "In addition to bananas in the bin, add one more banana to the grey bin until there are exactly three bananas inside"
+    },
+    "episode_s": "60",
+    "scene": "bananas_5_grey_bin.usda",
+    "filename": "benchmark/bananas_in_bin_three.py",
+    "contact_objects": "banana, banana_01, banana_02, banana_03, banana_04, grey_bin, table",
+    "terminations": "BananasInBinTerminations",
+    "attributes": "semantics, counting",
+    "subtasks": "pick_and_place(groups=['banana', 'banana_01', 'banana_03'], logical=choose, k=1) score=1.0",
+    "num_sequential_stages": 1,
+    "num_atomic_conditions": 2,
+    "num_subtasks": 1,
+    "difficulty_score": 3,
+    "difficulty_label": "moderate"
+  },
+  {
+    "task_name": "BananaThenRubiksCubeTask",
+    "instruction": "put the banana then the cube in the bowl",
+    "instruction_variants": {
+      "default": "put the banana then the cube in the bowl",
+      "vague": "put banana then cube away",
+      "specific": "First pick up the yellow banana and place it in the bowl, then pick up the rubiks cube and place it in the bowl after"
+    },
+    "episode_s": "60",
+    "scene": "rubiks_cube_banana_bowl.usda",
+    "filename": "benchmark/banana_then_rubiks_cube.py",
+    "contact_objects": "rubiks_cube, banana, bowl, table",
+    "terminations": "Terminations",
+    "attributes": "conjunction",
+    "subtasks": "pick_and_place(groups=['banana'], logical=all) score=1.0; pick_and_place(groups=['rubiks_cube'], logical=all) score=1.0",
+    "num_sequential_stages": 2,
+    "num_atomic_conditions": 4,
+    "num_subtasks": 2,
+    "difficulty_score": 2,
+    "difficulty_label": "simple"
+  },
+  {
+    "task_name": "BlockStackingOrderAgnosticTask",
+    "instruction": "Stack the blocks into a tower",
+    "instruction_variants": {
+      "default": "Stack the blocks into a tower",
+      "vague": "Build a tower",
+      "specific": "Pick up the colored blocks and stack them vertically on top of each other, forming one tower"
+    },
+    "episode_s": "90",
+    "scene": "colored_blocks.usda",
+    "filename": "benchmark/block_stacking_order_agnostic_task.py",
+    "contact_objects": "red_block, blue_block, green_block, yellow_block, table",
+    "terminations": "BlockStackingOrderAgnosticTerminations",
+    "attributes": "stacking",
+    "subtasks": "stack_any_2_blocks(groups=['red_blue', 'red_green', 'red_yellow', 'blue_green', 'blue_yellow', 'green_yellow'], logical=any) score=0.33; stack_any_3_blocks(groups=['red_blue_green', 'red_blue_yellow', 'red_green_yellow', 'blue_green_yellow'], logical=any) score=0.33; stack_all_4_blocks(groups=['conditions'], logical=all) score=0.34",
+    "num_sequential_stages": 3,
+    "num_atomic_conditions": 3,
+    "num_subtasks": 3,
+    "difficulty_score": 5,
+    "difficulty_label": "complex"
+  },
+  {
+    "task_name": "BlockStackingSpecifiedOrderTask",
+    "instruction": "Stack the blocks in the order from bottom to top: red, blue, green, yellow",
+    "instruction_variants": {
+      "default": "Stack the blocks in the order from bottom to top: red, blue, green, yellow",
+      "vague": "Stack in the order of red, blue, green, yellow",
+      "specific": "Build a tower by placing the red block first, then the blue block on top, then the green, and finally the yellow block on top as a single tower"
+    },
+    "episode_s": "90",
+    "scene": "colored_blocks.usda",
+    "filename": "benchmark/block_stacking_specified_order_task.py",
+    "contact_objects": "red_block, blue_block, green_block, yellow_block, table",
+    "terminations": "BlockStackingSpecifiedOrderTerminations",
+    "attributes": "stacking, color",
+    "subtasks": "unnamed_subtask(groups=['conditions'], logical=all) score=0.33; unnamed_subtask(groups=['conditions'], logical=all) score=0.33; unnamed_subtask(groups=['conditions'], logical=all) score=0.34",
+    "num_sequential_stages": 3,
+    "num_atomic_conditions": 3,
+    "num_subtasks": 3,
+    "difficulty_score": 5,
+    "difficulty_label": "complex"
+  },
+  {
+    "task_name": "RubiksCubeAndBananaTask",
+    "instruction": "Put the cube and the banana in the bowl",
+    "instruction_variants": {
+      "default": "Put the cube and the banana in the bowl",
+      "vague": "Put everything in the bowl",
+      "specific": "Pick up the rubiks cube and the yellow banana and place both inside the bowl"
+    },
+    "episode_s": "60",
+    "scene": "rubiks_cube_banana_bowl.usda",
+    "filename": "benchmark/rubiks_cube_and_banana_task.py",
+    "contact_objects": "rubiks_cube, banana, bowl, table",
+    "terminations": "RubiksCubeAndBananaTerminations",
+    "attributes": "conjunction",
+    "subtasks": "pick_and_place(groups=['rubiks_cube', 'banana'], logical=all) score=1.0",
+    "num_sequential_stages": 1,
+    "num_atomic_conditions": 4,
+    "num_subtasks": 2,
+    "difficulty_score": 2,
+    "difficulty_label": "simple"
+  },
+  {
+    "task_name": "RubiksCubeLeftOfBowlTask",
+    "instruction": "Put the rubiks cube to the left of the bowl",
+    "instruction_variants": {
+      "default": "Put the rubiks cube to the left of the bowl",
+      "vague": "Put the cube left of the bowl",
+      "specific": "Pick up the rubiks cube and place it on the table to the left side of the bowl"
+    },
+    "episode_s": "30",
+    "scene": "rubiks_cube_banana_bowl.usda",
+    "filename": "benchmark/rubiks_cube_left_of_bowl.py",
+    "contact_objects": "rubiks_cube, banana, bowl, table",
+    "terminations": "RubiksCubeLeftOfBowlTermination",
+    "attributes": "spatial",
+    "subtasks": "rubiks_cube_left_of_bowl(groups=['group1', 'group2', 'group3'], logical=all) score=1.0",
+    "num_sequential_stages": 1,
+    "num_atomic_conditions": 3,
+    "num_subtasks": 3,
+    "difficulty_score": 4,
+    "difficulty_label": "moderate"
+  },
+  {
+    "task_name": "RubiksCubeOrBananaTask",
+    "instruction": "Put the cube or the banana in the bowl",
+    "instruction_variants": {
+      "default": "Put the cube or the banana in the bowl",
+      "vague": "Choose an object and put it in the bowl",
+      "specific": "Choose either the rubiks cube or the yellow banana and place it inside the bowl"
+    },
+    "episode_s": "30",
+    "scene": "rubiks_cube_banana_bowl.usda",
+    "filename": "benchmark/rubiks_cube_or_banana_task.py",
+    "contact_objects": "rubiks_cube, banana, bowl, table",
+    "terminations": "Terminations",
+    "attributes": "conjunction",
+    "subtasks": "pick_and_place(groups=['rubiks_cube', 'banana'], logical=any) score=1.0",
+    "num_sequential_stages": 1,
+    "num_atomic_conditions": 2,
+    "num_subtasks": 1,
+    "difficulty_score": 1,
+    "difficulty_label": "simple"
+  }
+]

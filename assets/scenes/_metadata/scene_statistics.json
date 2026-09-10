@@ -1,0 +1,80 @@
+{
+  "total_scenes": 5,
+  "total_unique_objects": 7,
+  "average_objects_per_scene": 2.0,
+  "object_count_distribution": {
+    "0": 1,
+    "1": 1,
+    "2": 1,
+    "3": 1,
+    "4": 1
+  },
+  "per_object_stats": {
+    "../objects/basic/blue_block.usd": {
+      "dataset": "basic",
+      "object_name": "blue_block",
+      "count": 1,
+      "scenes": [
+        "colored_blocks.usda"
+      ]
+    },
+    "../objects/basic/green_block.usd": {
+      "dataset": "basic",
+      "object_name": "green_block",
+      "count": 1,
+      "scenes": [
+        "colored_blocks.usda"
+      ]
+    },
+    "../objects/basic/red_block.usd": {
+      "dataset": "basic",
+      "object_name": "red_block",
+      "count": 1,
+      "scenes": [
+        "colored_blocks.usda"
+      ]
+    },
+    "../objects/basic/yellow_block.usd": {
+      "dataset": "basic",
+      "object_name": "yellow_block",
+      "count": 1,
+      "scenes": [
+        "colored_blocks.usda"
+      ]
+    },
+    "../objects/hot3d/rubiks_cube.usd": {
+      "dataset": "hot3d",
+      "object_name": "rubiks_cube",
+      "count": 1,
+      "scenes": [
+        "rubiks_cube_banana_bowl.usda"
+      ]
+    },
+    "../objects/ycb/banana.usd": {
+      "dataset": "ycb",
+      "object_name": "banana",
+      "count": 3,
+      "scenes": [
+        "banana_bowl.usda",
+        "bananas_5_grey_bin.usda",
+        "rubiks_cube_banana_bowl.usda"
+      ]
+    },
+    "../objects/ycb/bowl.usd": {
+      "dataset": "ycb",
+      "object_name": "bowl",
+      "count": 2,
+      "scenes": [
+        "banana_bowl.usda",
+        "rubiks_cube_banana_bowl.usda"
+      ]
+    }
+  },
+  "per_scene_object_counts": {
+    "banana_bowl.usda": 2,
+    "bananas_5_grey_bin.usda": 1,
+    "base_empty.usda": 0,
+    "colored_blocks.usda": 4,
+    "rubiks_cube_banana_bowl.usda": 3
+  }
+}

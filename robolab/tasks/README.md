@@ -1,0 +1,20 @@
+# Available Tasks
+
+This table contains metadata for tasks in `robolab/tasks`.
+
+**Filtered by subfolders:** benchmark
+
+**Total Tasks: 8**
+
+| task_name | scene | instruction | episode_s | attributes | num_subtasks | difficulty_label |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| BananaInBowlTask (benchmark/banana_in_bowl_task.py) | <img src="../../assets/scenes/_images/banana_bowl.png" alt="banana_bowl.png" width="400" height="None"><br>banana_bowl.usda | **default:** Pick up the banana and place it in the bowl<br>**vague:** Put the fruit in the bowl<br>**specific:** Grasp the yellow banana and place it inside the red bowl on the table | 50 | semantics | 1 | simple |
+| BananasInBinThreeTotalTask (benchmark/bananas_in_bin_three.py) | <img src="../../assets/scenes/_images/bananas_5_grey_bin.png" alt="bananas_5_grey_bin.png" width="400" height="None"><br>bananas_5_grey_bin.usda | **default:** Make sure there are 3 (three) bananas in the grey bin.<br>**vague:** 3 bananas in the bin<br>**specific:** In addition to bananas in the bin, add one more banana to the grey bin until there are exactly three bananas inside | 60 | semantics, counting | 1 | moderate |
+| BananaThenRubiksCubeTask (benchmark/banana_then_rubiks_cube.py) | <img src="../../assets/scenes/_images/rubiks_cube_banana_bowl.png" alt="rubiks_cube_banana_bowl.png" width="400" height="None"><br>rubiks_cube_banana_bowl.usda | **default:** put the banana then the cube in the bowl<br>**vague:** put banana then cube away<br>**specific:** First pick up the yellow banana and place it in the bowl, then pick up the rubiks cube and place it in the bowl after | 60 | conjunction | 2 | simple |
+| BlockStackingOrderAgnosticTask (benchmark/block_stacking_order_agnostic_task.py) | <img src="../../assets/scenes/_images/colored_blocks.png" alt="colored_blocks.png" width="400" height="None"><br>colored_blocks.usda | **default:** Stack the blocks into a tower<br>**vague:** Build a tower<br>**specific:** Pick up the colored blocks and stack them vertically on top of each other, forming one tower | 90 | stacking | 3 | complex |
+| BlockStackingSpecifiedOrderTask (benchmark/block_stacking_specified_order_task.py) | <img src="../../assets/scenes/_images/colored_blocks.png" alt="colored_blocks.png" width="400" height="None"><br>colored_blocks.usda | **default:** Stack the blocks in the order from bottom to top: red, blue, green, yellow<br>**vague:** Stack in the order of red, blue, green, yellow<br>**specific:** Build a tower by placing the red block first, then the blue block on top, then the green, and finally the yellow block on top as a single tower | 90 | stacking, color | 3 | complex |
+| RubiksCubeAndBananaTask (benchmark/rubiks_cube_and_banana_task.py) | <img src="../../assets/scenes/_images/rubiks_cube_banana_bowl.png" alt="rubiks_cube_banana_bowl.png" width="400" height="None"><br>rubiks_cube_banana_bowl.usda | **default:** Put the cube and the banana in the bowl<br>**vague:** Put everything in the bowl<br>**specific:** Pick up the rubiks cube and the yellow banana and place both inside the bowl | 60 | conjunction | 2 | simple |
+| RubiksCubeLeftOfBowlTask (benchmark/rubiks_cube_left_of_bowl.py) | <img src="../../assets/scenes/_images/rubiks_cube_banana_bowl.png" alt="rubiks_cube_banana_bowl.png" width="400" height="None"><br>rubiks_cube_banana_bowl.usda | **default:** Put the rubiks cube to the left of the bowl<br>**vague:** Put the cube left of the bowl<br>**specific:** Pick up the rubiks cube and place it on the table to the left side of the bowl | 30 | spatial | 3 | moderate |
+| RubiksCubeOrBananaTask (benchmark/rubiks_cube_or_banana_task.py) | <img src="../../assets/scenes/_images/rubiks_cube_banana_bowl.png" alt="rubiks_cube_banana_bowl.png" width="400" height="None"><br>rubiks_cube_banana_bowl.usda | **default:** Put the cube or the banana in the bowl<br>**vague:** Choose an object and put it in the bowl<br>**specific:** Choose either the rubiks cube or the yellow banana and place it inside the bowl | 30 | conjunction | 1 | simple |
+
+This table was generated automatically from CSV data. Last updated: 2026-09-10 08:12:23

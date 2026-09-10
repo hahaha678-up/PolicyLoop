@@ -1,0 +1,770 @@
+[
+  {
+    "name": "blue_block",
+    "usd_path": "assets/objects/basic/blue_block.usd",
+    "prim_path": "/blue_block",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "block",
+    "description": "This is a blue colored block.",
+    "dims": [
+      0.04700441956520081,
+      0.04700441956520081,
+      0.04700441956520081
+    ],
+    "mass": null,
+    "density": 9.999999974752427e-07,
+    "dynamic_friction": 1.0,
+    "static_friction": 0.800000011920929,
+    "restitution": 0.0,
+    "dataset": "basic"
+  },
+  {
+    "name": "green_block",
+    "usd_path": "assets/objects/basic/green_block.usd",
+    "prim_path": "/green_block",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "block",
+    "description": "This is a green colored block.",
+    "dims": [
+      0.04700441956520081,
+      0.04700441956520081,
+      0.04700441956520081
+    ],
+    "mass": null,
+    "density": 9.999999974752427e-07,
+    "dynamic_friction": 1.0,
+    "static_friction": 0.800000011920929,
+    "restitution": 0.0,
+    "dataset": "basic"
+  },
+  {
+    "name": "red_block",
+    "usd_path": "assets/objects/basic/red_block.usd",
+    "prim_path": "/red_block",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "block",
+    "description": "This is a red colored block.",
+    "dims": [
+      0.04700441956520081,
+      0.04700441956520081,
+      0.04700441956520081
+    ],
+    "mass": null,
+    "density": 9.999999974752427e-07,
+    "dynamic_friction": 1.0,
+    "static_friction": 0.800000011920929,
+    "restitution": 0.0,
+    "dataset": "basic"
+  },
+  {
+    "name": "yellow_block",
+    "usd_path": "assets/objects/basic/yellow_block.usd",
+    "prim_path": "/yellow_block",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "block",
+    "description": "This is a yellow colored block.",
+    "dims": [
+      0.04700441956520081,
+      0.04700441956520081,
+      0.04700441956520081
+    ],
+    "mass": null,
+    "density": 9.999999974752427e-07,
+    "dynamic_friction": 1.0,
+    "static_friction": 0.800000011920929,
+    "restitution": 0.0,
+    "dataset": "basic"
+  },
+  {
+    "name": "lemon_01",
+    "usd_path": "assets/objects/fruits_veggies/lemon1.usd",
+    "prim_path": "/lemon_01",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "fruit",
+    "description": "This lemon is oval-shaped with a bright yellow, slightly textured rind. It has a fresh, citrus scent and a small protruding stem at one end.",
+    "dims": [
+      0.07616109400987625,
+      0.04957818612456322,
+      0.05067594989668578
+    ],
+    "mass": null,
+    "density": 0.0,
+    "dynamic_friction": 5.0,
+    "static_friction": 5.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "fruits_veggies"
+  },
+  {
+    "name": "orange_01",
+    "usd_path": "assets/objects/fruits_veggies/orange1.usd",
+    "prim_path": "/orange_01",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "fruit",
+    "description": "This orange is spherical with a textured, bright orange skin and a small, green stem. Its surface is dimpled, typical of citrus fruits, and it exudes a fresh, citrus scent.",
+    "dims": [
+      0.0724581852555275,
+      0.07246018946170807,
+      0.08321036636334611
+    ],
+    "mass": null,
+    "density": 0.0,
+    "dynamic_friction": 5.0,
+    "static_friction": 5.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "fruits_veggies"
+  },
+  {
+    "name": "spoon",
+    "usd_path": "assets/objects/handal/spoon.usd",
+    "prim_path": "/spoon",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "utensil",
+    "description": "This object consists of four spoons, each with a long handle and a shallow bowl. They are a muted gray color, with a smooth surface and a small hole in the handle for hanging.",
+    "dims": [
+      0.12395820021629333,
+      0.0341745987534523,
+      0.017558999359607724
+    ],
+    "mass": 0.05000000074505806,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "handal"
+  },
+  {
+    "name": "bbq_sauce_bottle",
+    "usd_path": "assets/objects/hot3d/bbq_sauce_bottle.usd",
+    "prim_path": "/bbq_sauce_bottle",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "condiment",
+    "description": "The bottle has a mostly brown exterior with a red and yellow label featuring the text 'BBQ Sauce'. Its shape is distinctively tapered towards the bottom with a wide opening at the top.",
+    "dims": [
+      0.04377719201147556,
+      0.06436279974877837,
+      0.1452203986918903
+    ],
+    "mass": 0.5,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "hot3d"
+  },
+  {
+    "name": "clay_plates",
+    "usd_path": "assets/objects/hot3d/clay_plates.usd",
+    "prim_path": "/clay_plates",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "dishware",
+    "description": "These are circular plates made of clay, featuring a smooth, natural texture. They have a light brown color with subtle variations in tone and a slightly raised center.",
+    "dims": [
+      0.30059631168842316,
+      0.3019825518131256,
+      0.04710607230663306
+    ],
+    "mass": 0.5,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "hot3d"
+  },
+  {
+    "name": "computer_mouse",
+    "usd_path": "assets/objects/hot3d/computer_mouse.usd",
+    "prim_path": "/computer_mouse",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      0.7071067811865476,
+      0.7071067811865475,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "electronics",
+    "description": "The object has a smooth, rounded shape with a matte black finish. It features buttons on the top and a scroll wheel, with a minimalist design that avoids bright colors or text.",
+    "dims": [
+      0.06997649744153023,
+      0.10984554886817934,
+      0.042237978428602246
+    ],
+    "mass": 0.10000000149011612,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "hot3d"
+  },
+  {
+    "name": "remote_control",
+    "usd_path": "assets/objects/hot3d/remote_control.usd",
+    "prim_path": "/remote_control",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "electronics",
+    "description": "The remote control features a sleek, curved design with a matte black finish. It has a few buttons on the top, including navigation and volume controls, all colored in subtle shades to blend with the overall dark aesthetic.",
+    "dims": [
+      0.03558525629341602,
+      0.025243834592402023,
+      0.16430988907814026
+    ],
+    "mass": 0.20000000298023224,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "hot3d"
+  },
+  {
+    "name": "rubiks_cube",
+    "usd_path": "assets/objects/hot3d/rubiks_cube.usd",
+    "prim_path": "/rubiks_cube",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "toy",
+    "description": "The object is a colorful 3D puzzle consisting of smaller cubes that can be rotated on each axis. Its faces feature a combination of colors, typically including red, green, blue, yellow, orange, and white.",
+    "dims": [
+      0.058285847306251526,
+      0.057770855724811554,
+      0.05796363018453121
+    ],
+    "mass": 0.20000000298023224,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "hot3d"
+  },
+  {
+    "name": "banana",
+    "usd_path": "assets/objects/ycb/banana.usd",
+    "prim_path": "/banana",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "fruit",
+    "description": "These bananas are long and curved, with a smooth yellow skin and slightly green tips. They are commonly known for their sweet taste and are often eaten raw or used in various dishes.",
+    "dims": [
+      0.10888800024986267,
+      0.17841200530529022,
+      0.03666999936103821
+    ],
+    "mass": 0.11999999731779099,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "ycb"
+  },
+  {
+    "name": "bowl",
+    "usd_path": "assets/objects/ycb/bowl.usd",
+    "prim_path": "/bowl",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "kitchenware",
+    "description": "The bowls are round with a smooth, glossy surface and a vibrant red color. They feature a speckled design and a slightly raised rim, adding a decorative touch.",
+    "dims": [
+      0.16144399344921112,
+      0.16111300885677338,
+      0.05496999993920326
+    ],
+    "mass": 0.5,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "ycb"
+  },
+  {
+    "name": "coffee_can",
+    "usd_path": "assets/objects/ycb/coffee_can.usd",
+    "prim_path": "/coffee_can",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "food",
+    "description": "The can is cylindrical with a shiny blue exterior, featuring the text 'Master Chef' prominently displayed on the front. It has white and yellow accents and contains ground coffee, with brewing instructions printed on the label.",
+    "dims": [
+      0.10228899866342545,
+      0.10244599729776382,
+      0.1401439905166626
+    ],
+    "mass": 0.296999990940094,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "ycb"
+  },
+  {
+    "name": "cordless_drill",
+    "usd_path": "assets/objects/ycb/cordless_drill.usd",
+    "prim_path": "/cordless_drill",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "tool",
+    "description": "The cordless drill features a sleek design with a predominantly orange body and black grip. It includes a chuck at the front for securing drill bits and has a battery pack attached to the base.",
+    "dims": [
+      0.18424099683761597,
+      0.18743400275707245,
+      0.05731699988245964
+    ],
+    "mass": 1.5,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "ycb"
+  },
+  {
+    "name": "dry_erase_marker",
+    "usd_path": "assets/objects/ycb/dry_erase_marker.usd",
+    "prim_path": "/dry_erase_marker",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "stationery",
+    "description": "The marker features a cylindrical body with a black cap and a white barrel, prominently displaying the brand name 'Expo' in bold text. The tip is chiseled, designed for both broad and fine lines, and the overall color scheme emphasizes its dry-erase functionality.",
+    "dims": [
+      0.021038999781012535,
+      0.1208450049161911,
+      0.018877001479268074
+    ],
+    "mass": 0.019999999552965164,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "ycb"
+  },
+  {
+    "name": "mug",
+    "usd_path": "assets/objects/ycb/mug.usd",
+    "prim_path": "/mug",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "kitchenware",
+    "description": "The object is a pair of red ceramic mugs with a glossy finish. They feature a curved handle and have subtle vertical stripes along the body.",
+    "dims": [
+      0.11696600168943405,
+      0.09307499974966049,
+      0.08138400316238403
+    ],
+    "mass": 0.30000001192092896,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "ycb"
+  },
+  {
+    "name": "mustard",
+    "usd_path": "assets/objects/ycb/mustard.usd",
+    "prim_path": "/mustard",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "condiment",
+    "description": "The object features a bright yellow plastic squeeze bottle with a conical cap. It is labeled with bold text and nutritional information, highlighting its flavor and usage.",
+    "dims": [
+      0.09714999794960022,
+      0.06661999970674515,
+      0.19140800833702087
+    ],
+    "mass": 0.5,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "ycb"
+  },
+  {
+    "name": "pitcher",
+    "usd_path": "assets/objects/ycb/pitcher.usd",
+    "prim_path": "/pitcher",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "kitchenware",
+    "description": "This pitcher has a smooth, rounded body and a curved handle for easy pouring. It features a deep blue color with a tapered spout at the top.",
+    "dims": [
+      0.1489969938993454,
+      0.14476899802684784,
+      0.24264000356197357
+    ],
+    "mass": 0.5,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "ycb"
+  },
+  {
+    "name": "scissors",
+    "usd_path": "assets/objects/ycb/scissors.usd",
+    "prim_path": "/scissors",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "tool",
+    "description": "These scissors have a grey plastic handle with orange accents. The blades are shiny metal and are designed for cutting through paper and other materials.",
+    "dims": [
+      0.0960800051689148,
+      0.20154400169849396,
+      0.01571599952876568
+    ],
+    "mass": 0.20000000298023224,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "ycb"
+  },
+  {
+    "name": "soft_scrub",
+    "usd_path": "assets/objects/ycb/soft_scrub.usd",
+    "prim_path": "/soft_scrub",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "bottle",
+    "description": "The container is a tall, white plastic bottle with a slightly curved shape. It features a colorful label with blue and green hues, including the text 'Soft Scrub' prominently displayed on the front.",
+    "dims": [
+      0.10240599513053894,
+      0.06771200150251389,
+      0.25064000487327576
+    ],
+    "mass": 1.5,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "ycb"
+  },
+  {
+    "name": "sugar_box",
+    "usd_path": "assets/objects/ycb/sugar_box.usd",
+    "prim_path": "/sugar_box",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "food",
+    "description": "The box is primarily yellow and white, featuring the word 'Domino' prominently on the front. It has nutritional information and usage instructions printed on the sides in black text.",
+    "dims": [
+      0.04954399913549423,
+      0.09404799342155457,
+      0.1760150045156479
+    ],
+    "mass": 1.0,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "ycb"
+  },
+  {
+    "name": "tomato_soup_can",
+    "usd_path": "assets/objects/ycb/tomato_soup_can.usd",
+    "prim_path": "/tomato_soup_can",
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quat_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload": [],
+    "rigid_body": true,
+    "static_body": false,
+    "class": "food",
+    "description": "The can is made of metal and features a vibrant red and white label. It displays the text 'Campbell's Tomato Soup' prominently along with nutritional information on the back.",
+    "dims": [
+      0.06785399466753006,
+      0.0677499994635582,
+      0.10203700512647629
+    ],
+    "mass": 0.44999998807907104,
+    "density": 0.0,
+    "dynamic_friction": 2.0,
+    "static_friction": 2.0,
+    "restitution": 0.10000000149011612,
+    "dataset": "ycb"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "file_records": [
+    {
+      "source_url": "/home/xuningy/projects/exe/assets/bop/handal/usd/textures/obj_000015.png",
+      "source_hash": "1cf01b0a993d7f006211e3b4aed87b11da618f4d",
+      "target_url": "./textures/obj_000015.png",
+      "target_hash": "50fb9d3ec9b86ec0fb2b3e356bfee5d6f12ce990"
+    }
+  ]
+}

@@ -1,0 +1,782 @@
+{
+  "banana_bowl.usda": [
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "Looks",
+      "payload": [],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prim_path": "/world/Looks",
+      "rigid_body": false,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": true
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "PhysicsMaterial",
+      "payload": [],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prim_path": "/world/PhysicsMaterial",
+      "rigid_body": false,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": true
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "table",
+      "payload": [
+        "../fixtures/table_oak.usd"
+      ],
+      "position": [
+        0.5471946001052856,
+        -5.8164543588645756e-05,
+        -0.3470015227794647
+      ],
+      "prim_path": "/world/table",
+      "rigid_body": true,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": false
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "franka_table",
+      "payload": [
+        "../fixtures/franka_table.usd"
+      ],
+      "position": [
+        -0.087,
+        0.0,
+        0.0
+      ],
+      "prim_path": "/world/franka_table",
+      "rigid_body": false,
+      "rotation": [
+        6.123233995736766e-17,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "static_body": true
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "GroundPlane",
+      "payload": [],
+      "position": [
+        0.0,
+        0.0,
+        -0.697
+      ],
+      "prim_path": "/world/GroundPlane",
+      "rigid_body": false,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": true
+    },
+    {
+      "description": "The bowls are round with a smooth, glossy surface and a vibrant red color. They feature a speckled design and a slightly raised rim, adding a decorative touch.",
+      "kinematic": false,
+      "name": "bowl",
+      "payload": [
+        "../objects/ycb/bowl.usd"
+      ],
+      "position": [
+        0.5611012578010559,
+        0.15261490643024445,
+        0.030349360778927803
+      ],
+      "prim_path": "/world/bowl",
+      "rigid_body": true,
+      "rotation": [
+        0.9999998211860657,
+        -0.00038860940411786313,
+        -0.00045113630375182354,
+        5.555720606926124e-05
+      ],
+      "static_body": false
+    },
+    {
+      "description": "These bananas are long and curved, with a smooth yellow skin and slightly green tips. They are commonly known for their sweet taste and are often eaten raw or used in various dishes.",
+      "kinematic": false,
+      "name": "banana",
+      "payload": [
+        "../objects/ycb/banana.usd"
+      ],
+      "position": [
+        0.5097271203994751,
+        -0.115806944668293,
+        0.02117740921676159
+      ],
+      "prim_path": "/world/banana",
+      "rigid_body": true,
+      "rotation": [
+        0.9999991655349731,
+        -0.0006239555700669702,
+        -0.0011311464245367135,
+        -1.079676892718864e-05
+      ],
+      "static_body": false
+    }
+  ],
+  "bananas_5_grey_bin.usda": [
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "table",
+      "payload": [
+        "../fixtures/table_oak.usd"
+      ],
+      "position": [
+        0.1986086070537567,
+        0.02207084558904171,
+        0.05000215023756027
+      ],
+      "prim_path": "/World/table",
+      "rigid_body": true,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": false
+    },
+    {
+      "description": "These bananas are long and curved, with a smooth yellow skin and slightly green tips. They are commonly known for their sweet taste and are often eaten raw or used in various dishes.",
+      "kinematic": false,
+      "name": "banana",
+      "payload": [
+        "../objects/ycb/banana.usd"
+      ],
+      "position": [
+        0.4572347104549408,
+        0.13281071186065674,
+        0.06881386041641235
+      ],
+      "prim_path": "/World/banana",
+      "rigid_body": true,
+      "rotation": [
+        0.9998323917388916,
+        -0.0066386946972827295,
+        -0.01367147034285098,
+        -0.010208185983240194
+      ],
+      "static_body": false
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "franka_table",
+      "payload": [
+        "../fixtures/franka_table.usd"
+      ],
+      "position": [
+        -0.087,
+        0.0,
+        0.0
+      ],
+      "prim_path": "/World/franka_table",
+      "rigid_body": false,
+      "rotation": [
+        6.123233995736766e-17,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "static_body": true
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "GroundPlane",
+      "payload": [],
+      "position": [
+        0.0,
+        0.0,
+        -0.65
+      ],
+      "prim_path": "/World/GroundPlane",
+      "rigid_body": false,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": true
+    },
+    {
+      "description": "These bananas are long and curved, with a smooth yellow skin and slightly green tips. They are commonly known for their sweet taste and are often eaten raw or used in various dishes.",
+      "kinematic": false,
+      "name": "banana_01",
+      "payload": [
+        "../objects/ycb/banana.usd"
+      ],
+      "position": [
+        0.5051590204238892,
+        0.17553137242794037,
+        0.0916505679488182
+      ],
+      "prim_path": "/World/banana_01",
+      "rigid_body": true,
+      "rotation": [
+        0.9383014440536499,
+        -0.07088605686974415,
+        0.1061059999852131,
+        -0.32141419351894324
+      ],
+      "static_body": false
+    },
+    {
+      "description": "These bananas are long and curved, with a smooth yellow skin and slightly green tips. They are commonly known for their sweet taste and are often eaten raw or used in various dishes.",
+      "kinematic": false,
+      "name": "banana_02",
+      "payload": [
+        "../objects/ycb/banana.usd"
+      ],
+      "position": [
+        0.45876049995422363,
+        -0.2314152717590332,
+        0.07583961635828018
+      ],
+      "prim_path": "/World/banana_02",
+      "rigid_body": true,
+      "rotation": [
+        0.9923003315925598,
+        -0.002646509948235513,
+        -0.003143607709993421,
+        -0.12378677488712357
+      ],
+      "static_body": false
+    },
+    {
+      "description": "These bananas are long and curved, with a smooth yellow skin and slightly green tips. They are commonly known for their sweet taste and are often eaten raw or used in various dishes.",
+      "kinematic": false,
+      "name": "banana_03",
+      "payload": [
+        "../objects/ycb/banana.usd"
+      ],
+      "position": [
+        0.5301897525787354,
+        0.016014935448765755,
+        0.06842733919620514
+      ],
+      "prim_path": "/World/banana_03",
+      "rigid_body": true,
+      "rotation": [
+        -0.42526885867118847,
+        0.006748795640065469,
+        0.00016480963996411322,
+        0.9050418909861002
+      ],
+      "static_body": false
+    },
+    {
+      "description": "These bananas are long and curved, with a smooth yellow skin and slightly green tips. They are commonly known for their sweet taste and are often eaten raw or used in various dishes.",
+      "kinematic": false,
+      "name": "banana_04",
+      "payload": [
+        "../objects/ycb/banana.usd"
+      ],
+      "position": [
+        0.5551273226737976,
+        -0.20309223234653473,
+        0.07596556842327118
+      ],
+      "prim_path": "/World/banana_04",
+      "rigid_body": true,
+      "rotation": [
+        0.2090113461017608,
+        0.005550577816772902,
+        -0.0035618197001467044,
+        0.9778909764012825
+      ],
+      "static_body": false
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "grey_bin",
+      "payload": [
+        "../fixtures/grey_bin.usd"
+      ],
+      "position": [
+        0.5017970623368689,
+        -0.22697487965471644,
+        0.05000000000000005
+      ],
+      "prim_path": "/World/grey_bin",
+      "rigid_body": true,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": false
+    }
+  ],
+  "base_empty.usda": [
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "PhysicsMaterial",
+      "payload": [],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prim_path": "/world/PhysicsMaterial",
+      "rigid_body": false,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": true
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "table",
+      "payload": [
+        "../fixtures/table_oak.usd"
+      ],
+      "position": [
+        0.5471367990922231,
+        0.0,
+        -0.35
+      ],
+      "prim_path": "/world/table",
+      "rigid_body": true,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": false
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "franka_table",
+      "payload": [
+        "../fixtures/franka_table.usd"
+      ],
+      "position": [
+        -0.087,
+        0.0,
+        0.0
+      ],
+      "prim_path": "/world/franka_table",
+      "rigid_body": false,
+      "rotation": [
+        6.123233995736766e-17,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "static_body": true
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "GroundPlane",
+      "payload": [],
+      "position": [
+        0.0,
+        0.0,
+        -0.697
+      ],
+      "prim_path": "/world/GroundPlane",
+      "rigid_body": false,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": true
+    }
+  ],
+  "colored_blocks.usda": [
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "Looks",
+      "payload": [],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prim_path": "/world/Looks",
+      "rigid_body": false,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": true
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "PhysicsMaterial",
+      "payload": [],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prim_path": "/world/PhysicsMaterial",
+      "rigid_body": false,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": true
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "table",
+      "payload": [
+        "../fixtures/table_oak.usd"
+      ],
+      "position": [
+        0.5471952557563782,
+        -5.710670302505605e-05,
+        -0.3470016121864319
+      ],
+      "prim_path": "/world/table",
+      "rigid_body": true,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": false
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "franka_table",
+      "payload": [
+        "../fixtures/franka_table.usd"
+      ],
+      "position": [
+        -0.087,
+        0.0,
+        0.0
+      ],
+      "prim_path": "/world/franka_table",
+      "rigid_body": false,
+      "rotation": [
+        6.123233995736766e-17,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "static_body": true
+    },
+    {
+      "description": "This is a blue colored block.",
+      "kinematic": false,
+      "name": "blue_block",
+      "payload": [
+        "../objects/basic/blue_block.usd"
+      ],
+      "position": [
+        0.4601268470287323,
+        1.1039082892239094e-07,
+        0.026294255629181862
+      ],
+      "prim_path": "/world/blue_block",
+      "rigid_body": true,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": false
+    },
+    {
+      "description": "This is a green colored block.",
+      "kinematic": false,
+      "name": "green_block",
+      "payload": [
+        "../objects/basic/green_block.usd"
+      ],
+      "position": [
+        0.36935505270957947,
+        0.18831472098827362,
+        0.02629413641989231
+      ],
+      "prim_path": "/world/green_block",
+      "rigid_body": true,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": false
+    },
+    {
+      "description": "This is a red colored block.",
+      "kinematic": false,
+      "name": "red_block",
+      "payload": [
+        "../objects/basic/red_block.usd"
+      ],
+      "position": [
+        0.371458500623703,
+        -0.1741129755973816,
+        0.02629457786679268
+      ],
+      "prim_path": "/world/red_block",
+      "rigid_body": true,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": false
+    },
+    {
+      "description": "This is a yellow colored block.",
+      "kinematic": false,
+      "name": "yellow_block",
+      "payload": [
+        "../objects/basic/yellow_block.usd"
+      ],
+      "position": [
+        0.4753357470035553,
+        0.11556775867938995,
+        0.02629409171640873
+      ],
+      "prim_path": "/world/yellow_block",
+      "rigid_body": true,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": false
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "GroundPlane",
+      "payload": [],
+      "position": [
+        0.0,
+        0.0,
+        -0.697
+      ],
+      "prim_path": "/world/GroundPlane",
+      "rigid_body": false,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": true
+    }
+  ],
+  "rubiks_cube_banana_bowl.usda": [
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "PhysicsMaterial",
+      "payload": [],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prim_path": "/World/PhysicsMaterial",
+      "rigid_body": false,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": true
+    },
+    {
+      "description": "The bowls are round with a smooth, glossy surface and a vibrant red color. They feature a speckled design and a slightly raised rim, adding a decorative touch.",
+      "kinematic": false,
+      "name": "bowl",
+      "payload": [
+        "../objects/ycb/bowl.usd"
+      ],
+      "position": [
+        0.44258353114128113,
+        0.12658219039440155,
+        0.07732785493135452
+      ],
+      "prim_path": "/World/bowl",
+      "rigid_body": true,
+      "rotation": [
+        0.9999999403953552,
+        -5.875354421326538e-05,
+        -0.0003236202968188691,
+        -0.00010501052579296266
+      ],
+      "static_body": false
+    },
+    {
+      "description": "The object is a colorful 3D puzzle consisting of smaller cubes that can be rotated on each axis. Its faces feature a combination of colors, typically including red, green, blue, yellow, orange, and white.",
+      "kinematic": false,
+      "name": "rubiks_cube",
+      "payload": [
+        "../objects/hot3d/rubiks_cube.usd"
+      ],
+      "position": [
+        0.4306528866291046,
+        -0.09742811322212219,
+        0.08113233000040054
+      ],
+      "prim_path": "/World/rubiks_cube",
+      "rigid_body": true,
+      "rotation": [
+        0.9999990463256836,
+        -0.0009071399440944852,
+        0.0010379400315123045,
+        8.441170612118017e-05
+      ],
+      "static_body": false
+    },
+    {
+      "description": "These bananas are long and curved, with a smooth yellow skin and slightly green tips. They are commonly known for their sweet taste and are often eaten raw or used in various dishes.",
+      "kinematic": false,
+      "name": "banana",
+      "payload": [
+        "../objects/ycb/banana.usd"
+      ],
+      "position": [
+        0.538878858089447,
+        -0.07555567473173141,
+        0.0684281587600708
+      ],
+      "prim_path": "/World/banana",
+      "rigid_body": true,
+      "rotation": [
+        0.9999781250953674,
+        -0.002664888769974798,
+        -0.006051987813043361,
+        0.00014540326035168
+      ],
+      "static_body": false
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "franka_table",
+      "payload": [
+        "../fixtures/franka_table.usd"
+      ],
+      "position": [
+        -0.087,
+        0.0,
+        0.0
+      ],
+      "prim_path": "/World/franka_table",
+      "rigid_body": false,
+      "rotation": [
+        6.123233995736766e-17,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "static_body": true
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "table",
+      "payload": [
+        "../fixtures/table_maple.usd"
+      ],
+      "position": [
+        0.19858434796333313,
+        0.02206825464963913,
+        0.05000072345137596
+      ],
+      "prim_path": "/World/table",
+      "rigid_body": true,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": false
+    },
+    {
+      "description": "",
+      "kinematic": false,
+      "name": "GroundPlane",
+      "payload": [],
+      "position": [
+        0.0,
+        0.0,
+        -0.65
+      ],
+      "prim_path": "/World/GroundPlane",
+      "rigid_body": false,
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "static_body": true
+    }
+  ]
+}

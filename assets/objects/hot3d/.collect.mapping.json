@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "file_records": [
+    {
+      "source_url": "/home/xuningy/projects/exe/assets/bop/hot3d/usd/textures/obj_000030.png",
+      "source_hash": "fbd777f5ac6d52d21e136e76c16a2556993db960",
+      "target_url": "./textures/obj_000030.png",
+      "target_hash": "557e58c1cdf905b12014b2cfcf1e383f19272023"
+    },
+    {
+      "source_url": "/home/xuningy/projects/exe/assets/bop/hot3d/usd/textures/obj_000014.png",
+      "source_hash": "2c2054863adf3563e526c22d6fc9e2721e8d4ecb",
+      "target_url": "./textures/obj_000014.png",
+      "target_hash": "8a7302902ce91ce95d1239a2764f8cc1e592a364"
+    },
+    {
+      "source_url": "/home/xuningy/projects/exe/assets/bop/hot3d/usd/textures/obj_000003.png",
+      "source_hash": "585c4e9902210d30cca3b6a1a090065594946db4",
+      "target_url": "./textures/obj_000003.png",
+      "target_hash": "974a29271bf1c891bac4626f6616a16729365ee3"
+    },
+    {
+      "source_url": "/home/xuningy/projects/exe/assets/bop/hot3d/usd/textures/obj_000031.png",
+      "source_hash": "2a1566ed58b0e1107ea5caeefdc8e9fb1dfaa6b1",
+      "target_url": "./textures/obj_000031.png",
+      "target_hash": "26e1369282f1dd65f1093a2082abc92a6310310e"
+    },
+    {
+      "source_url": "/home/xuningy/projects/exe/assets/bop/hot3d/usd/textures/obj_000033.png",
+      "source_hash": "46d9e9febad1d61dd72e966ea1c233e3e8866324",
+      "target_url": "./textures/obj_000033.png",
+      "target_hash": "120a8451acea77cc2fef062c2a6de32fbaa9d032"
+    }
+  ]
+}
