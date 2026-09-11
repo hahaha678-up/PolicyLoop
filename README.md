@@ -17,30 +17,30 @@ https://github.com/user-attachments/assets/4b5084ed-6620-4d90-97b0-de6d4f437c15
 
 | 内容 | 当前范围 |
 |---|---|
-| 任务 | 8 个，全部位于 [benchmark/](robolab/tasks/benchmark/) |
+| 任务 | 8 个，全部位于 [benchmark/](policyloop/tasks/benchmark/) |
 | 场景 | 4 个评测场景 + `base_empty.usda` 场景生成模板 |
 | 物体与背景 | 24 个物体 USD、4 个 HDR/EXR 背景 |
 | 机器人配置 | DROID、Franka；DROID Joint Position / Abs IK / Rel IK |
 | 默认评测入口 | Pi0.5 + DROID Joint Position；未传 `--task` 时遍历 8 个任务 |
 | 可选客户端 | Pi0 family 其他变体、GR00T；服务端与权重需单独准备 |
 
-[任务与场景对应表](docs/benchmark.md) · [任务 metadata](robolab/tasks/README.md) · [场景索引](assets/scenes/README.md) · [物体索引](assets/objects/README.md)
+[任务与场景对应表](docs/benchmark.md) · [任务 metadata](policyloop/tasks/README.md) · [场景索引](assets/scenes/README.md) · [物体索引](assets/objects/README.md)
 
 ## 代码入口
 
 ```text
-policies/pi0_family/   Pi0 family 客户端和评测/扰动入口
-policies/gr00t/        GR00T 客户端和评测入口
-robolab/eval/          共享 runner、episode 循环
-robolab/registrations/ 任务、机器人、观测与控制配置的组合注册
-robolab/core/task/     条件、子任务状态机、事件判定
-robolab/core/logging/  轨迹与结果记录
-robolab/tasks/         8 个内置任务及其 metadata
-robolab/variations/    相机、背景和光照配置
-assets/               场景、物体、机器人和材质资源
-analysis/             结果统计与检查
-skills/               Scene Generation Skill
-tests/                边界一致性与运行回归检查
+policies/pi0_family/      Pi0 family 客户端和评测/扰动入口
+policies/gr00t/           GR00T 客户端和评测入口
+policyloop/eval/          共享 runner、episode 循环
+policyloop/registrations/ 任务、机器人、观测与控制配置的组合注册
+policyloop/core/task/     条件、子任务状态机、事件判定
+policyloop/core/logging/  轨迹与结果记录
+policyloop/tasks/         8 个内置任务及其 metadata
+policyloop/variations/    相机、背景和光照配置
+assets/                   场景、物体、机器人和材质资源
+analysis/                 结果统计与检查
+skills/                   Scene Generation Skill
+tests/                    边界一致性与运行回归检查
 ```
 
 ## 环境与安装
@@ -89,4 +89,4 @@ python -m pytest tests/ -v
 
 ## 文档
 
-[文档索引](docs/README.md) · [注册与配置](docs/environment_registration.md) · [统一评测](docs/environment_run.md) · [任务判定](docs/subtask.md) · [场景生成](skills/robolab-scenegen/SKILL.md)
+[文档索引](docs/README.md) · [注册与配置](docs/environment_registration.md) · [统一评测](docs/environment_run.md) · [任务判定](docs/subtask.md) · [场景生成](skills/policyloop-scenegen/SKILL.md)

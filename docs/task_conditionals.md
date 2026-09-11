@@ -22,7 +22,7 @@ The runtime tests exercise the condition and event interfaces for all eight bund
 
 ## Conditionals
 
-See [`robolab/core/task/conditionals.py`](../robolab/core/task/conditionals.py) for implementation details.
+See [`policyloop/core/task/conditionals.py`](../policyloop/core/task/conditionals.py) for implementation details.
 
 ### Logicals
 
@@ -79,7 +79,7 @@ The **`mirrored=False`** (default) uses the robot's natural perspective. Set **`
 
 #### `object_in_container` / `object_inside` / `object_outside_of` / `object_enclosed` — centroid-in-convex-hull check
 
-Predicates defined in [`conditionals.py`](../robolab/core/task/conditionals.py); the per-step test ([`_obj_centroid_in_container`](../robolab/core/task/predicate_logic.py)) and hull primitive ([`LocalHull` / `point_in_hull`](../robolab/core/task/hull_check.py)) live alongside it.
+Predicates defined in [`conditionals.py`](../policyloop/core/task/conditionals.py); the per-step test ([`_obj_centroid_in_container`](../policyloop/core/task/predicate_logic.py)) and hull primitive ([`LocalHull` / `point_in_hull`](../policyloop/core/task/hull_check.py)) live alongside it.
 
 The **centroid of the inside-object's hull vertices** is transformed into the **container's local frame** and tested against the container's **convex-hull face planes**. Running the test in the container's own frame makes it orientation-invariant — flipped, tipped, or rotated containers are handled correctly. Each hull is built once at scene-load from the prim's mesh points (`scipy.spatial.ConvexHull`) and cached on the `WorldState`. For open-top semantics, faces whose outward normal projects ≥ 0.7 onto the container's local +z are dropped, leaving the polytope unbounded along the opening, so an object lifted above the rim still reads as inside.
 

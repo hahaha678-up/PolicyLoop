@@ -24,11 +24,11 @@ import warnings
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from robolab.core.logging.results import (
+from policyloop.core.logging.results import (
     load_episode_results,
     save_episode_results_jsonl,
 )
-from robolab.core.utils.file_utils import (
+from policyloop.core.utils.file_utils import (
     confirm_folders,
     expand_folder_patterns,
     get_folders_in_dir,

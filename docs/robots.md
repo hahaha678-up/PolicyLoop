@@ -1,11 +1,11 @@
 # Robots
 
-RoboLab uses IsaacLab's `ArticulationCfg` to define robots. For details, refer to IsaacLab's documentation on robots. The robot config is passed as `robot_cfg` during RoboLab's [environment registration](environment_registration.md).
+PolicyLoop uses IsaacLab's `ArticulationCfg` to define robots. For details, refer to IsaacLab's documentation on robots. The robot config is passed as `robot_cfg` during PolicyLoop's [environment registration](environment_registration.md).
 
 ## Built-in Robots
 
 The list of built-in robots — with images, embodiment tags, available action spaces, and per-robot
-details — lives in [`robolab/robots/README.md`](../robolab/robots/README.md). That README is the
+details — lives in [`policyloop/robots/README.md`](../policyloop/robots/README.md). That README is the
 canonical robot list; this page covers how to *use* a built-in robot and how to define your own.
 
 Each robot file defines:
@@ -29,7 +29,7 @@ A robot declares its fixture via an optional class-attribute label, read by
 the env factory at registration time:
 
 ```python
-from robolab.core.environments.scene_fixture import FRANKA_TABLE_FIXTURE, TableFixtureCfg
+from policyloop.core.environments.scene_fixture import FRANKA_TABLE_FIXTURE, TableFixtureCfg
 
 @configclass
 class MyRobotCfg:
@@ -90,7 +90,7 @@ inherited by subclasses defined earlier in the file.
 Import the robot config and pass it as `robot_cfg` in your registration function (see [Environment Registration](environment_registration.md#step-2-write-a-registration-function) for the full example):
 
 ```python
-from robolab.robots.droid import DroidCfg, DroidJointPositionActionCfg, contact_gripper
+from policyloop.robots.droid import DroidCfg, DroidJointPositionActionCfg, contact_gripper
 
 # Inside your register_envs() function:
 auto_discover_and_create_cfgs(
@@ -104,15 +104,15 @@ auto_discover_and_create_cfgs(
 ## Defining a Custom Robot
 
 > [!NOTE]
-> **Creating a new robot in RoboLab is exactly the same as creating one in IsaacLab.**
+> **Creating a new robot in PolicyLoop is exactly the same as creating one in IsaacLab.**
 > You can bring over any robot configuration from IsaacLab (including all built-in configs and custom assets you've defined for IsaacLab), or create a new `ArticulationCfg`/`@configclass` robot from scratch by following the IsaacLab [asset configuration](https://isaac-sim.github.io/IsaacLab/main/source/how-to/write_articulation_cfg.html) and [robot configuration](https://docs.nvidia.com/learning/physical-ai/getting-started-with-isaac-lab/latest/train-your-second-robot-with-isaac-lab/02-robot-configuration-in-isaac-lab.html) tutorials.
 >
-> There are no RoboLab-specific requirements for robot definition beyond having a `robot` field of type `ArticulationCfg` inside a configclass.
+> There are no PolicyLoop-specific requirements for robot definition beyond having a `robot` field of type `ArticulationCfg` inside a configclass.
 >
-> **If it works in IsaacLab, it will work with RoboLab (plus [one small addition](#Contact-Gripper))!**
+> **If it works in IsaacLab, it will work with PolicyLoop (plus [one small addition](#Contact-Gripper))!**
 
 
-A robot config for RoboLab is a `@configclass` with a `robot` field (an `ArticulationCfg`) and optionally sensor fields (e.g., cameras). It can live in your own repository — there is no requirement to add it to the RoboLab package.
+A robot config for PolicyLoop is a `@configclass` with a `robot` field (an `ArticulationCfg`) and optionally sensor fields (e.g., cameras). It can live in your own repository — there is no requirement to add it to the PolicyLoop package.
 
 
 IsaacLab ships USD assets and pre-built configurations for many robots. You can use any of these.
@@ -121,7 +121,7 @@ For how to write an `ArticulationCfg` (spawn settings, initial state, actuators,
 - [Interacting with an Articulation](https://isaac-sim.github.io/IsaacLab/main/source/tutorials/01_assets/run_articulation.html) — Spawning and controlling articulated robots in simulation
 - [Robot Configuration in IsaacLab](https://docs.nvidia.com/learning/physical-ai/getting-started-with-isaac-lab/latest/train-your-second-robot-with-isaac-lab/02-robot-configuration-in-isaac-lab.html) — End-to-end tutorial for configuring a new robot
 
-The RoboLab-specific wrapper is a `@configclass` that exposes the `ArticulationCfg` as a `robot` field:
+The PolicyLoop-specific wrapper is a `@configclass` that exposes the `ArticulationCfg` as a `robot` field:
 
 ```python
 # my_repo/my_robot.py
@@ -174,9 +174,9 @@ class MyRobotCfg:
 
 You also need to define an action config and proprioception observations that match your robot's joints. See the built-in examples:
 
-- **Joint position actions:** `DroidJointPositionActionCfg` in `robolab/robots/droid.py`
-- **IK actions:** `FrankaIKActionCfg` / `FrankaRelIKActionCfg` in `robolab/robots/franka_definitions.py`
-- **Proprioception:** `ProprioceptionObservationCfg` in `robolab/robots/droid.py`
+- **Joint position actions:** `DroidJointPositionActionCfg` in `policyloop/robots/droid.py`
+- **IK actions:** `FrankaIKActionCfg` / `FrankaRelIKActionCfg` in `policyloop/robots/franka_definitions.py`
+- **Proprioception:** `ProprioceptionObservationCfg` in `policyloop/robots/droid.py`
 
 ### Contact Gripper
 
@@ -186,7 +186,7 @@ grasp/release against these entries by name.
 
 Each entry is one of two kinds:
 
-- **Concrete label** — maps a name of your choosing to a prim path. RoboLab builds contact
+- **Concrete label** — maps a name of your choosing to a prim path. PolicyLoop builds contact
   sensors against every task object for each concrete label.
 - **Alias group** — maps a name to a *list of concrete labels*, meaning "any of these".
   Groups get no sensors of their own; they resolve to their members' sensors at query time.

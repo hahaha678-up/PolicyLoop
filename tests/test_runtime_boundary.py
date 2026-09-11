@@ -6,12 +6,12 @@ from pathlib import Path
 import pytest
 import torch
 
-import robolab.constants as constants
-import robolab.core.environments.factory as factory
-from robolab.core.environments.runtime import create_env, end_episode
-from robolab.core.task.event_tracker import EventTracker
-from robolab.core.task.subtask_state_machine import SubtaskStateMachine
-from robolab.registrations.droid.auto_env_registrations_jointpos import auto_register_droid_envs
+import policyloop.constants as constants
+import policyloop.core.environments.factory as factory
+from policyloop.core.environments.runtime import create_env, end_episode
+from policyloop.core.task.event_tracker import EventTracker
+from policyloop.core.task.subtask_state_machine import SubtaskStateMachine
+from policyloop.registrations.droid.auto_env_registrations_jointpos import auto_register_droid_envs
 from tests.test_repository_boundary import SCENES, TASK_SCENES
 from tests.test_registered_envs import isolated_registry
 
@@ -85,8 +85,8 @@ from dataclasses import dataclass
 import isaaclab.envs.mdp as mdp
 from isaaclab.managers import TerminationTermCfg as DoneTerm
 from isaaclab.utils import configclass
-from robolab.core.task.task import Task
-from robolab.core.scenes.utils import import_scene_and_contact_object_list
+from policyloop.core.task.task import Task
+from policyloop.core.scenes.utils import import_scene_and_contact_object_list
 
 @configclass
 class SmokeTerminations:

@@ -10,7 +10,7 @@ import msgpack_numpy as mnp
 import numpy as np
 import zmq
 
-from robolab.eval.base_client import InferenceClient
+from policyloop.eval.base_client import InferenceClient
 
 # GR00T DROID images are sent as HWC uint8 at 180x320, then the N1.7 processor
 # applies its own SmallestMaxSize/center-crop transforms. Do not letterbox here.
@@ -41,7 +41,7 @@ def quat_wxyz_to_matrix(quat: np.ndarray) -> np.ndarray:
 
 
 def compute_eef_9d(position: np.ndarray, quat_wxyz: np.ndarray) -> np.ndarray:
-    """Convert RoboLab base-link EEF pose to the GR00T DROID 9D state."""
+    """Convert PolicyLoop base-link EEF pose to the GR00T DROID 9D state."""
     rot_robot = quat_wxyz_to_matrix(quat_wxyz)
     rot_mat = rot_robot @ DROID_EEF_ROTATION_CORRECT
     rot6d = rot_mat[:2, :].reshape(6)

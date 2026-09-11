@@ -2,7 +2,7 @@
 
 Objects are USD assets used in manipulation tasks. Each object is a self-contained `.usd` or `.usda` file with physics properties (rigid body, collision, mass, friction) that make it graspable and simulatable in IsaacSim.
 
-RoboLab ships several object datasets in [`assets/objects/`](../assets/objects/):
+PolicyLoop ships several object datasets in [`assets/objects/`](../assets/objects/):
 
 | Dataset | Description |
 |---------|-------------|

@@ -10,11 +10,11 @@ from urllib.parse import unquote
 
 import pytest
 
-from robolab.constants import DEFAULT_TASK_SUBFOLDERS, PACKAGE_DIR, SCENE_DIR, TASK_DIR
-from robolab.core.task.task_utils import find_task_files, load_task_from_file
-from robolab.core.utils.usd_utils import get_usd_objects_info
-from robolab.eval.runner import add_common_eval_args
-from robolab.tasks._utils.load_task_info import extract_task_metadata_from_file
+from policyloop.constants import DEFAULT_TASK_SUBFOLDERS, PACKAGE_DIR, SCENE_DIR, TASK_DIR
+from policyloop.core.task.task_utils import find_task_files, load_task_from_file
+from policyloop.core.utils.usd_utils import get_usd_objects_info
+from policyloop.eval.runner import add_common_eval_args
+from policyloop.tasks._utils.load_task_info import extract_task_metadata_from_file
 
 ROOT = Path(PACKAGE_DIR)
 TASK_SCENES = {
@@ -39,7 +39,7 @@ def test_task_sources_and_metadata_match():
     actual = {
         load_task_from_file(p, allow_multiple=False).__name__: p for p in files
     }
-    metadata = _read_json("robolab/tasks/_metadata/task_metadata.json")
+    metadata = _read_json("policyloop/tasks/_metadata/task_metadata.json")
     assert len(metadata) == len(TASK_SCENES)
     assert set(actual) == {row["task_name"] for row in metadata} == set(TASK_SCENES)
     for row in metadata:
@@ -51,12 +51,12 @@ def test_task_sources_and_metadata_match():
 
 
 def test_task_csv_and_readme_match():
-    with (ROOT / "robolab/tasks/_metadata/task_table.csv").open() as stream:
+    with (ROOT / "policyloop/tasks/_metadata/task_table.csv").open() as stream:
         rows = list(csv.DictReader(stream))
     assert len(rows) == len(TASK_SCENES)
     assert {row["task_name"].split(" (")[0] for row in rows} == set(TASK_SCENES)
     for name in TASK_SCENES:
-        assert name in (ROOT / "robolab/tasks/README.md").read_text()
+        assert name in (ROOT / "policyloop/tasks/README.md").read_text()
         assert name in (ROOT / "docs/benchmark.md").read_text()
 
 
@@ -113,7 +113,7 @@ def test_runner_defaults_to_bundled_tasks():
 
 
 def _markdown_files():
-    for folder in ("docs", "policies", "skills", "assets", "robolab"):
+    for folder in ("docs", "policies", "skills", "assets", "policyloop"):
         yield from (ROOT / folder).rglob("*.md")
     yield ROOT / "README.md"
 

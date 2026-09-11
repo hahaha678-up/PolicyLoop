@@ -7,7 +7,7 @@ Once you have [registered environments](environment_registration.md), this page 
 Use `create_env` to create and initialize an environment from a registered name or a configuration object. This supports running multiple environments sequentially without restarting the simulation.
 
 ```python
-from robolab.core.environments.runtime import create_env
+from policyloop.core.environments.runtime import create_env
 
 env, env_cfg = create_env(
     "BananaInBowlTask",       # Registered environment name
@@ -44,7 +44,7 @@ env.close()
 Use `get_envs` to retrieve environment names by task, tag, or all registered environments:
 
 ```python
-from robolab.core.environments.factory import get_envs
+from policyloop.core.environments.factory import get_envs
 
 all_envs = get_envs()                                # All registered environments
 task_envs = get_envs(task="BananaInBowlTask")        # All variants of a task
@@ -73,7 +73,7 @@ When `instruction_type` is not `"default"`, the type name is appended to the run
 
 ## Recorder Manager Patch
 
-RoboLab uses a patched recorder manager for fine-grained control over HDF5 data recording. This must be set up **before** registering environments:
+PolicyLoop uses a patched recorder manager for fine-grained control over HDF5 data recording. This must be set up **before** registering environments:
 
 ```python
 from isaaclab.app import AppLauncher
@@ -82,18 +82,18 @@ app_launcher = AppLauncher(args_cli)
 simulation_app = app_launcher.app
 
 # Patch recorder manager (before registration)
-from robolab.core.logging.recorder_manager import patch_recorder_manager
+from policyloop.core.logging.recorder_manager import patch_recorder_manager
 patch_recorder_manager()
 
 # Register environments (after patching)
-from robolab.registrations.droid.auto_env_registrations_jointpos import auto_register_droid_envs
+from policyloop.registrations.droid.auto_env_registrations_jointpos import auto_register_droid_envs
 auto_register_droid_envs()
 ```
 
 At the end of each episode, explicitly call `end_episode` to flush recorded data to the HDF5 file:
 
 ```python
-from robolab.core.environments.runtime import create_env, end_episode
+from policyloop.core.environments.runtime import create_env, end_episode
 
 env, env_cfg = create_env("BananaInBowlTask", device="cuda:0", num_envs=1, use_fabric=True)
 
@@ -142,7 +142,7 @@ python policies/pi0_family/run.py --headless --num_envs 20
 python policies/pi0_family/run.py --headless --num_envs 10 --num-runs 2
 ```
 
-**Multi-env episode handling:** With `num_envs > 1`, each environment runs an independent episode. The shared `robolab/eval/runner.py` handles per-env termination, video recording, and result logging automatically. If you are writing a custom evaluation loop, see `robolab/eval/episode.py` for the multi-env episode runner pattern (`from robolab.eval import run_episode`), which manages per-env video writers, independent termination tracking, and batched policy inference.
+**Multi-env episode handling:** With `num_envs > 1`, each environment runs an independent episode. The shared `policyloop/eval/runner.py` handles per-env termination, video recording, and result logging automatically. If you are writing a custom evaluation loop, see `policyloop/eval/episode.py` for the multi-env episode runner pattern (`from policyloop.eval import run_episode`), which manages per-env video writers, independent termination tracking, and batched policy inference.
 
 ## Initial Condition Randomization
 
@@ -153,9 +153,9 @@ To randomize object poses between episodes:
 3. Pass the modified config to `create_env`
 
 ```python
-from robolab.core.environments.runtime import create_env
-from robolab.core.environments.config import parse_env_cfg
-from robolab.core.events.reset_pose import RandomizeInitPoseUniform
+from policyloop.core.environments.runtime import create_env
+from policyloop.core.environments.config import parse_env_cfg
+from policyloop.core.events.reset_pose import RandomizeInitPoseUniform
 
 env_cfg = parse_env_cfg("BananaInBowlTask",
     device="cuda:0", seed=42, num_envs=1, use_fabric=True)
@@ -174,7 +174,7 @@ env, env_cfg = create_env(env_cfg,
 You can also pass events directly to `create_env` using the `events` parameter. This is not encouraged, however.
 
 ```python
-from robolab.core.events.reset_camera import RandomizeCameraPoseUniform
+from policyloop.core.events.reset_camera import RandomizeCameraPoseUniform
 
 events = RandomizeCameraPoseUniform.from_params(
     cameras=["over_shoulder_left_camera"],
@@ -200,10 +200,10 @@ import sys
 import traceback
 
 from isaaclab.app import AppLauncher
-from robolab.constants import get_timestamp, DEFAULT_TASK_SUBFOLDERS
+from policyloop.constants import get_timestamp, DEFAULT_TASK_SUBFOLDERS
 
 # ── CLI args ──────────────────────────────────────────────────────────────
-parser = argparse.ArgumentParser(description="Evaluate my policy on RoboLab benchmark")
+parser = argparse.ArgumentParser(description="Evaluate my policy on PolicyLoop benchmark")
 parser.add_argument("--num_envs", type=int, default=1)
 AppLauncher.add_app_launcher_args(parser)
 parser.add_argument("--task", nargs="+", default=None, help="Specific task(s) to evaluate")
@@ -223,21 +223,21 @@ simulation_app = app_launcher.app
 import torch
 from tqdm import tqdm
 
-import robolab.constants
-from robolab.constants import PACKAGE_DIR, set_output_dir
-from robolab.core.environments.factory import get_envs
-from robolab.core.environments.runtime import create_env, end_episode
-from robolab.core.logging.recorder_manager import patch_recorder_manager
-from robolab.core.logging.results import (
+import policyloop.constants
+from policyloop.constants import PACKAGE_DIR, set_output_dir
+from policyloop.core.environments.factory import get_envs
+from policyloop.core.environments.runtime import create_env, end_episode
+from policyloop.core.logging.recorder_manager import patch_recorder_manager
+from policyloop.core.logging.results import (
     check_all_episodes_complete, check_run_complete,
     init_experiment, update_experiment_results, summarize_experiment_results,
 )
-from robolab.core.observations.observation_utils import unpack_image_obs
-from robolab.core.utils.video_utils import VideoWriter
+from policyloop.core.observations.observation_utils import unpack_image_obs
+from policyloop.core.utils.video_utils import VideoWriter
 
 # ── Register environments ─────────────────────────────────────────────────
 # Option A: Use the built-in DROID joint-position registration
-from robolab.registrations.droid.auto_env_registrations_jointpos import auto_register_droid_envs
+from policyloop.registrations.droid.auto_env_registrations_jointpos import auto_register_droid_envs
 auto_register_droid_envs(task_dirs=args_cli.task_dirs, task=args_cli.task)
 
 # Option B: Use your own custom registration (see environment_registration.md)
@@ -253,7 +253,7 @@ patch_recorder_manager()
 def run_episode(env, env_cfg, client, episode, headless=False):
     """Run a single policy-controlled episode (single-env example).
 
-    For multi-env, see robolab/eval/episode.py which handles per-env
+    For multi-env, see policyloop/eval/episode.py which handles per-env
     video writers, per-env policy clients, and independent termination.
     """
     obs, _ = env.reset()
@@ -263,7 +263,7 @@ def run_episode(env, env_cfg, client, episode, headless=False):
     instruction = env_cfg.instruction
 
     cleaned = re.sub(r"[^\w\s]", "", instruction).replace(" ", "_")
-    output_dir = robolab.constants.get_output_dir()
+    output_dir = policyloop.constants.get_output_dir()
     # For multi-env (num_envs > 1), use f"{cleaned}_{episode}_env{env_id}.mp4"
     video_writer = VideoWriter(os.path.join(output_dir, f"{cleaned}_{episode}.mp4"), video_fps)
 
@@ -435,7 +435,7 @@ python policies/pi0_family/run.py --output-folder-name 2026-01-24_15-35-59_pi05
 
 ## Evaluation Features
 
-The shared `robolab/eval/runner.py` provides several features out of the box:
+The shared `policyloop/eval/runner.py` provides several features out of the box:
 
 - **Resumability** — If you provide `--output-folder-name` pointing to an existing run, completed tasks and episodes are automatically skipped. This makes it safe to restart interrupted evaluations.
 - **Trajectory metrics** — At the end of each episode, trajectory metrics (SPARC smoothness, path length, speed, joint tracking error) are computed from the HDF5 data and written directly into `episode_results.jsonl`. See [Data Storage — Episode Results](data.md#episode-results) for the full list.
@@ -452,7 +452,7 @@ With `--enable-gt-state`, the episode loop attaches privileged simulator state t
 obs["gt_state"] = {env_id: state}   # one entry per active env
 ```
 
-Clients read their own env's entry (the `InferenceClient._get_env_gt_state` helper), so multi-env evaluations stay independent. The per-env `state` is a raw snapshot produced by `GroundTruthStateExporter` (`robolab/eval/gt_state.py`); everything is plain numpy and msgpack-serialisable:
+Clients read their own env's entry (the `InferenceClient._get_env_gt_state` helper), so multi-env evaluations stay independent. The per-env `state` is a raw snapshot produced by `GroundTruthStateExporter` (`policyloop/eval/gt_state.py`); everything is plain numpy and msgpack-serialisable:
 
 | Key | Contents |
 |-----|----------|

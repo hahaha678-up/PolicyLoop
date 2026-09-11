@@ -1,6 +1,6 @@
 # Statistical Significance and Adaptive Sampling
 
-Most RoboLab eval runs report a per-task success rate `k / n` over a fixed number of episodes. With small `n`, that point estimate is noisy: 6/10 and 60/100 both round to 60% but carry very different uncertainty. This page covers the tools RoboLab uses to (a) attach a credible interval to every success rate and (b) automatically choose `n` per task so that the interval is informative without burning extra compute on tasks that have already settled.
+Most PolicyLoop eval runs report a per-task success rate `k / n` over a fixed number of episodes. With small `n`, that point estimate is noisy: 6/10 and 60/100 both round to 60% but carry very different uncertainty. This page covers the tools PolicyLoop uses to (a) attach a credible interval to every success rate and (b) automatically choose `n` per task so that the interval is informative without burning extra compute on tasks that have already settled.
 
 ## Adaptive sampling
 
@@ -63,7 +63,7 @@ The interval is asymmetric near 0 and 1, which is the correct behavior for a bou
 ## API
 
 ```python
-from robolab.core.utils.adaptive_sampling import should_continue_sampling, count_task_episodes
+from policyloop.core.utils.adaptive_sampling import should_continue_sampling, count_task_episodes
 
 # Stopping decision for one task
 k, n = count_task_episodes(episode_results, env_name="BananaInBowlTask")

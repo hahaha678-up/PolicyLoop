@@ -1,12 +1,12 @@
 # Task Libraries
 
-A **task library** is a collection of [task definitions](task.md) organized into subfolders under a common root directory. RoboLab ships a built-in library in [`robolab/tasks/`](../robolab/tasks/), but you can create and maintain your own task library in a separate repository.
+A **task library** is a collection of [task definitions](task.md) organized into subfolders under a common root directory. PolicyLoop ships a built-in library in [`policyloop/tasks/`](../policyloop/tasks/), but you can create and maintain your own task library in a separate repository.
 
 ## Building Your Own Task Library
 
 To build a task library, write `Task` dataclasses with USD scenes, language instructions, and termination criteria. See [Creating Tasks](task.md) for the full authoring guide. Once you have tasks, see [Environment Registration](environment_registration.md) for how to register and run them.
 
-The rest of this page covers how to organize your tasks into a library and use RoboLab's utility scripts to generate metadata and statistics.
+The rest of this page covers how to organize your tasks into a library and use PolicyLoop's utility scripts to generate metadata and statistics.
 
 ## Directory Structure
 
@@ -34,11 +34,11 @@ Each task file defines a `Task` dataclass that binds a scene to language instruc
 
 ## Using Your Task Library
 
-Once you have task files, register them as runnable Gymnasium environments so they can be instantiated by your evaluation script. Your library does not need to live inside the RoboLab repo. See [Environment Registration](environment_registration.md) for the full workflow.
+Once you have task files, register them as runnable Gymnasium environments so they can be instantiated by your evaluation script. Your library does not need to live inside the PolicyLoop repo. See [Environment Registration](environment_registration.md) for the full workflow.
 
 ## Generating and Updating Task Metadata
 
-RoboLab provides utility scripts for generating metadata, README tables, and statistics for your task library. These live in [`robolab/tasks/_utils/`](../robolab/tasks/_utils/README.md) and work with **any** task directory — you point them at your own library the same way RoboLab uses them internally.
+PolicyLoop provides utility scripts for generating metadata, README tables, and statistics for your task library. These live in [`policyloop/tasks/_utils/`](../policyloop/tasks/_utils/README.md) and work with **any** task directory — you point them at your own library the same way PolicyLoop uses them internally.
 
 | Script | Purpose |
 |--------|---------|
@@ -51,7 +51,7 @@ RoboLab provides utility scripts for generating metadata, README tables, and sta
 This scans all task files, extracts metadata (instructions, attributes, scenes, subtasks, difficulty scores), and writes structured output files:
 
 ```bash
-python robolab/tasks/_utils/generate_task_metadata.py \
+python policyloop/tasks/_utils/generate_task_metadata.py \
     --tasks-folder /path/to/my_task_library/tasks \
     --output-folder /path/to/my_task_library/tasks/_metadata
 ```
@@ -67,26 +67,26 @@ Once metadata has been generated, you can view statistics without re-scanning:
 
 ```bash
 # Summary of task attributes and difficulty distribution
-python robolab/tasks/_utils/compute_task_statistics.py \
+python policyloop/tasks/_utils/compute_task_statistics.py \
     --metadata-file /path/to/my_task_library/tasks/_metadata/task_metadata.json
 
 # Full report (attributes, objects, subtasks, episodes, scenes)
-python robolab/tasks/_utils/compute_task_statistics.py \
+python policyloop/tasks/_utils/compute_task_statistics.py \
     --metadata-file /path/to/my_task_library/tasks/_metadata/task_metadata.json \
     --verbose
 
 # Individual analysis sections
-python robolab/tasks/_utils/compute_task_statistics.py --objects     # Object frequency
-python robolab/tasks/_utils/compute_task_statistics.py --subtasks   # Subtask complexity
-python robolab/tasks/_utils/compute_task_statistics.py --episodes   # Episode lengths
-python robolab/tasks/_utils/compute_task_statistics.py --difficulty  # Difficulty scoring
-python robolab/tasks/_utils/compute_task_statistics.py --by-scene   # Tasks grouped by scene
+python policyloop/tasks/_utils/compute_task_statistics.py --objects     # Object frequency
+python policyloop/tasks/_utils/compute_task_statistics.py --subtasks   # Subtask complexity
+python policyloop/tasks/_utils/compute_task_statistics.py --episodes   # Episode lengths
+python policyloop/tasks/_utils/compute_task_statistics.py --difficulty  # Difficulty scoring
+python policyloop/tasks/_utils/compute_task_statistics.py --by-scene   # Tasks grouped by scene
 ```
 
 ### Save a report to file
 
 ```bash
-python robolab/tasks/_utils/compute_task_statistics.py --verbose --save
+python policyloop/tasks/_utils/compute_task_statistics.py --verbose --save
 ```
 
 This writes `_metadata/task_report.txt` alongside the JSON and CSV files.
@@ -100,7 +100,7 @@ To check that all tasks have valid contact lists, terminations, and scene refere
 uv run pytest tests/test_tasks_valid.py -v
 ```
 
-To validate a custom task library outside `robolab/tasks/benchmark/`, point `find_task_files` at it from a script — see `tests/test_tasks_valid.py` for the calling pattern.
+To validate a custom task library outside `policyloop/tasks/benchmark/`, point `find_task_files` at it from a script — see `tests/test_tasks_valid.py` for the calling pattern.
 
 ## Keeping Metadata Up to Date
 
@@ -109,8 +109,8 @@ Re-run `generate_task_metadata.py` whenever you add, remove, or modify tasks. Th
 A typical workflow when updating your task library:
 
 1. **Add or edit task files** — see [Creating Tasks](task.md) for the authoring guide
-2. **Regenerate metadata** — `python robolab/tasks/_utils/generate_task_metadata.py --tasks-folder <your_tasks_dir>`
-3. **Review statistics** — `python robolab/tasks/_utils/compute_task_statistics.py --metadata-file <your_metadata_dir>/task_metadata.json --verbose`
+2. **Regenerate metadata** — `python policyloop/tasks/_utils/generate_task_metadata.py --tasks-folder <your_tasks_dir>`
+3. **Review statistics** — `python policyloop/tasks/_utils/compute_task_statistics.py --metadata-file <your_metadata_dir>/task_metadata.json --verbose`
 4. **Register and test** — follow [Environment Registration](environment_registration.md) to register your updated tasks and run them
 
 ## See Also
@@ -119,4 +119,4 @@ A typical workflow when updating your task library:
 - [Benchmark](benchmark.md) — The built-in benchmark task library and its difficulty scoring
 - [Environment Registration](environment_registration.md) — Registering tasks as runnable Gymnasium environments
 - [Evaluating a New Policy](policy.md) — Running evaluation against your tasks
-- [`robolab/tasks/_utils/README.md`](../robolab/tasks/_utils/README.md) — Quick reference for all utility scripts
+- [`policyloop/tasks/_utils/README.md`](../policyloop/tasks/_utils/README.md) — Quick reference for all utility scripts

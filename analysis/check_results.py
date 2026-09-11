@@ -14,9 +14,9 @@ import os
 
 import h5py
 
-from robolab.constants import DEFAULT_OUTPUT_DIR
-from robolab.core.logging.results import load_episode_results
-from robolab.core.utils.file_utils import load_file
+from policyloop.constants import DEFAULT_OUTPUT_DIR
+from policyloop.core.logging.results import load_episode_results
+from policyloop.core.utils.file_utils import load_file
 
 # ANSI color codes
 GREEN = '\033[92m'

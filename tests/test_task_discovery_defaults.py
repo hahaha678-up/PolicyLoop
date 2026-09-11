@@ -3,8 +3,8 @@
 
 from pathlib import Path
 
-from robolab.constants import DEFAULT_TASK_SUBFOLDERS
-from robolab.core.environments.factory import EnvFactory
+from policyloop.constants import DEFAULT_TASK_SUBFOLDERS
+from policyloop.core.environments.factory import EnvFactory
 
 
 def test_standard_registrations_use_benchmark_only():
@@ -17,7 +17,7 @@ def test_explicit_task_resolves_from_custom_directory(tmp_path, monkeypatch):
     task_file.write_text("class SampleTask:\n    pass\n")
 
     monkeypatch.setattr(
-        "robolab.core.task.task_utils.get_task_class_name_from_file",
+        "policyloop.core.task.task_utils.get_task_class_name_from_file",
         lambda path: "SampleTask",
     )
     factory = EnvFactory(task_dir=tmp_path)

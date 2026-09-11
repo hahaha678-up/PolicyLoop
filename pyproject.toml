@@ -2,13 +2,13 @@
 # SPDX-License-Identifier: Apache-2.0
 
 [project]
-name = "robolab"
+name = "policyloop"
 version = "0.3.1"
-description = "A benchmark for simulation"
+description = "Robot policy integration and parallel closed-loop evaluation with Isaac Lab"
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "Apache-2.0"}
-authors = [{name = "Xuning Yang"}]
+maintainers = [{name = "hahaha678-up"}]
 dependencies = [
     # Core
     # IsaacLab + IsaacSim are NOT pinned here: they are mutually-exclusive,
@@ -63,7 +63,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-include = ["robolab", "robolab.*", "policies", "policies.*"]
+include = ["policyloop", "policyloop.*", "policies", "policies.*"]
 
 # -- uv configuration --
 
@@ -118,5 +118,5 @@ line-length = 120
 select = ["I"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["robolab", "policies"]
+known-first-party = ["policyloop", "policies"]
 known-third-party = ["isaaclab", "isaaclab_assets", "isaaclab_mimic", "isaaclab_rl", "isaaclab_tasks"]

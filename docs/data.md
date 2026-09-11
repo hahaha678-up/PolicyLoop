@@ -1,11 +1,11 @@
 # Data Storage and Output
 
-By default, proprio data will be recorded in the hdf5 file. To turn on image data recording, `robolab.constants.RECORD_IMAGE_DATA` needs to be set to True.
+By default, proprio data will be recorded in the hdf5 file. To turn on image data recording, `policyloop.constants.RECORD_IMAGE_DATA` needs to be set to True.
 
 
 ## Single-Env vs Multi-Env Recording
 
-RoboLab supports running multiple parallel environments per task. The recording system handles both cases:
+PolicyLoop supports running multiple parallel environments per task. The recording system handles both cases:
 
 **Single-env** (`--num_envs 1`, default):
 - One episode per run, written to `run_{run_idx}.hdf5` as `demo_0`

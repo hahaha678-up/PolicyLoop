@@ -1,6 +1,6 @@
 # Inference Clients and Policy Server Setup
 
-RoboLab uses a **server-client architecture**: your model runs as a standalone server process, and RoboLab connects to it through a lightweight inference client during evaluation.
+PolicyLoop uses a **server-client architecture**: your model runs as a standalone server process, and PolicyLoop connects to it through a lightweight inference client during evaluation.
 
 For writing your own inference client, see [Evaluating a New Policy](../docs/policy.md). For the full run CLI reference, see [Running Environments](../docs/environment_run.md#run-cli-reference).
 

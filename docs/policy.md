@@ -1,10 +1,10 @@
 # Evaluating a New Policy
 
-This guide walks through how to evaluate your own policy against the RoboLab benchmark. You do **not** need to fork or modify RoboLab — everything can live in your own separate repository that imports `robolab` as a dependency.
+This guide walks through how to evaluate your own policy against the PolicyLoop benchmark. You do **not** need to fork or modify PolicyLoop — everything can live in your own separate repository that imports `policyloop` as a dependency.
 
-RoboLab uses a **server-client architecture**: your model runs as a standalone server (any framework, any GPU), and a lightweight inference client inside the simulator sends observations and receives actions.
+PolicyLoop uses a **server-client architecture**: your model runs as a standalone server (any framework, any GPU), and a lightweight inference client inside the simulator sends observations and receives actions.
 
-**Prerequisites:** You need registered environments before running evaluation. For DROID with joint-position actions, RoboLab ships a built-in registration you can use directly. If you need custom observations, a different robot, or different simulation parameters, first follow the [Environment Registration](environment_registration.md) guide.
+**Prerequisites:** You need registered environments before running evaluation. For DROID with joint-position actions, PolicyLoop ships a built-in registration you can use directly. If you need custom observations, a different robot, or different simulation parameters, first follow the [Environment Registration](environment_registration.md) guide.
 
 ## Your Repository Structure
 
@@ -14,12 +14,12 @@ my_policy_eval/
     __init__.py
     inference_client.py        # Your inference client (Step 1)
   run_eval.py                  # Your evaluation script (Step 2)
-  requirements.txt             # includes robolab as a dependency
+  requirements.txt             # includes policyloop as a dependency
 ```
 
 ## Step 1: Implement an Inference Client
 
-Subclass `robolab.eval.InferenceClient`. The base provides the control loop
+Subclass `policyloop.eval.InferenceClient`. The base provides the control loop
 (`infer`, `reset`, chunking, multi-env bookkeeping); subclasses implement
 four narrow hooks:
 
@@ -27,7 +27,7 @@ four narrow hooks:
 # my_policy/inference_client.py
 
 import numpy as np
-from robolab.eval import InferenceClient
+from policyloop.eval import InferenceClient
 
 
 class MyPolicyClient(InferenceClient):
@@ -92,9 +92,9 @@ For the full evaluation script template, CLI reference, and run instructions, se
 
 In short:
 
-1. **Install robolab** as a dependency:
+1. **Install policyloop** as a dependency:
    ```bash
-   cd /path/to/robolab && uv pip install -e .
+   cd /path/to/policyloop && uv pip install -e .
    ```
 
 2. **Install your package** so its modules are importable:

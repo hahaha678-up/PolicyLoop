@@ -1,6 +1,6 @@
 # Background Assets
 
-RoboLab ships a small curated set of indoor HDRI backgrounds. Any HDR/EXR environment map works — for more variety (including outdoor environments), download CC0 HDRIs from [Poly Haven](https://polyhaven.com/hdris) and reference them by path (see [docs/background.md](../../docs/background.md)). This table lists the 4 supported backgrounds.
+PolicyLoop ships a small curated set of indoor HDRI backgrounds. Any HDR/EXR environment map works — for more variety (including outdoor environments), download CC0 HDRIs from [Poly Haven](https://polyhaven.com/hdris) and reference them by path (see [docs/background.md](../../docs/background.md)). This table lists the 4 supported backgrounds.
 
 | Folder | Background | Description | Preview |
 | :-- | :-- | :-- | :-- |

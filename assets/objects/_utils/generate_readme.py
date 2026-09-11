@@ -20,7 +20,7 @@ from typing import List
 
 from common import load_catalog
 
-from robolab.constants import OBJECT_DIR
+from policyloop.constants import OBJECT_DIR
 
 
 def generate_readme(datasets: List[str], objects_dir: str, output_path: str) -> str:
@@ -35,7 +35,7 @@ def generate_readme(datasets: List[str], objects_dir: str, output_path: str) -> 
     Returns:
         Status message
     """
-    from robolab.core.utils.csv_utils import get_markdown_image_text, save_markdown_table
+    from policyloop.core.utils.csv_utils import get_markdown_image_text, save_markdown_table
 
     catalog_path = os.path.join(objects_dir, "object_catalog.json")
 

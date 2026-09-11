@@ -3,8 +3,8 @@
 
 import math
 
-from robolab.scene_gen.llm_scene_gen.physical_solver import PhysicalSolver
-from robolab.scene_gen.llm_scene_gen.predicates import (
+from policyloop.scene_gen.llm_scene_gen.physical_solver import PhysicalSolver
+from policyloop.scene_gen.llm_scene_gen.predicates import (
     ObjectState,
     PlaceInPredicate,
     PlaceOnPredicate,

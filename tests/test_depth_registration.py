@@ -3,8 +3,8 @@
 
 """Tests for the opt-in depth camera flag (registration-time)."""
 
-from robolab.core.observations.observation_utils import generate_image_obs_from_cameras
-from robolab.variations.camera import OverShoulderLeftCameraCfg, with_depth
+from policyloop.core.observations.observation_utils import generate_image_obs_from_cameras
+from policyloop.variations.camera import OverShoulderLeftCameraCfg, with_depth
 
 
 def test_with_depth_returns_variant_and_preserves_original():

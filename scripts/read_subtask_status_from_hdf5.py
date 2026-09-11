@@ -4,7 +4,7 @@
 import argparse
 import os
 
-from robolab.core.logging.results import load_timestep_from_config, print_all_episodes, print_episode_subtask_status
+from policyloop.core.logging.results import load_timestep_from_config, print_all_episodes, print_episode_subtask_status
 
 
 def main():

@@ -5,8 +5,8 @@ import argparse
 import os
 from contextlib import redirect_stdout
 
-from robolab.constants import BENCHMARK_TASK_CATEGORIES, DEFAULT_OUTPUT_DIR
-from robolab.core.logging.results import (
+from policyloop.constants import BENCHMARK_TASK_CATEGORIES, DEFAULT_OUTPUT_DIR
+from policyloop.core.logging.results import (
     filter_episodes_by_pattern,
     filter_episodes_by_task,
     load_and_merge_episode_data,
@@ -20,12 +20,12 @@ from robolab.core.logging.results import (
     summarize_experiments_by_wrong_objects,
     summarize_task_results,
 )
-from robolab.core.utils.file_utils import confirm_folders, expand_folder_patterns, load_file  # noqa: F401 (load_file)
+from policyloop.core.utils.file_utils import confirm_folders, expand_folder_patterns, load_file  # noqa: F401 (load_file)
 
 
 def main():
     parser = argparse.ArgumentParser(description="Read and summarize experiment results")
-    parser.add_argument("folder", nargs='+', help="Folder name(s) or glob pattern(s) under robolab/output (e.g., 'pi0_*'), or absolute path(s). Glob patterns prompt for confirmation.")
+    parser.add_argument("folder", nargs='+', help="Folder name(s) or glob pattern(s) under policyloop/output (e.g., 'pi0_*'), or absolute path(s). Glob patterns prompt for confirmation.")
     parser.add_argument("--verbose", action="store_true", default=False, help="Enable verbose output (shows stddev columns, wrong objects, and episode IDs)")
     parser.add_argument("--show-episodes", action="store_true", default=False, help="Show the episodes in the results for each task")
     parser.add_argument("--task", type=str, nargs='+', default=None, help="Name(s) of the task(s) to summarize")

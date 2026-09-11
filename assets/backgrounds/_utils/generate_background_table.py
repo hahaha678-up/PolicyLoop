@@ -12,8 +12,8 @@ import cv2
 import numpy as np
 from PIL import Image
 
-from robolab.constants import BACKGROUND_ASSET_DIR
-from robolab.core.utils.csv_utils import save_markdown_table
+from policyloop.constants import BACKGROUND_ASSET_DIR
+from policyloop.core.utils.csv_utils import save_markdown_table
 
 
 def convert_hdri_to_png(image_path, png_path, width=None, height=None, overwrite=False):
@@ -222,7 +222,7 @@ def generate_markdown_from_data(background_data, folder_path, output_md="README.
     timestamp = datetime.fromisoformat(background_data["metadata"]["generated_at"]).strftime("%Y-%m-%d %H:%M:%S")
     title = "Background Assets"
     description = (
-        f"RoboLab ships a small curated set of indoor HDRI backgrounds. Any HDR/EXR environment map works — "
+        f"PolicyLoop ships a small curated set of indoor HDRI backgrounds. Any HDR/EXR environment map works — "
         f"for more variety (including outdoor environments), download CC0 HDRIs from [Poly Haven](https://polyhaven.com/hdris) "
         f"and reference them by path (see [docs/background.md](../../docs/background.md)). "
         f"This table was generated automatically from {background_data['metadata']['total_backgrounds']} backgrounds. Last updated: {timestamp}"

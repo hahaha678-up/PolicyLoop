@@ -6,12 +6,12 @@
 import gymnasium as gym
 import pytest
 
-import robolab.core.environments.factory as factory
-from robolab.constants import TASK_DIR
-from robolab.registrations.droid.auto_env_registrations_jointpos import auto_register_droid_envs
-from robolab.registrations.droid.auto_env_registrations_abs_ik import auto_register_droid_abs_ik_envs
-from robolab.registrations.droid.auto_env_registrations_rel_ik import auto_register_droid_rel_ik_envs
-from robolab.registrations.example.auto_env_registration import auto_register_example_envs_franka
+import policyloop.core.environments.factory as factory
+from policyloop.constants import TASK_DIR
+from policyloop.registrations.droid.auto_env_registrations_jointpos import auto_register_droid_envs
+from policyloop.registrations.droid.auto_env_registrations_abs_ik import auto_register_droid_abs_ik_envs
+from policyloop.registrations.droid.auto_env_registrations_rel_ik import auto_register_droid_rel_ik_envs
+from policyloop.registrations.example.auto_env_registration import auto_register_example_envs_franka
 from tests.test_repository_boundary import TASK_SCENES
 
 
@@ -43,3 +43,14 @@ def test_no_duplicate_registrations(isolated_registry):
     first = set(factory.get_envs())
     auto_register_droid_envs()
     assert set(factory.get_envs()) == first == set(TASK_SCENES)
+
+
+def test_registered_entry_points_resolve_to_current_package(isolated_registry):
+    import importlib
+    from policyloop.core.environments.env import PolicyLoopEnv
+
+    auto_register_droid_envs()
+    for name in factory.get_envs():
+        module_name, class_name = gym.spec(name).entry_point.split(":")
+        assert module_name.startswith("policyloop.")
+        assert getattr(importlib.import_module(module_name), class_name) is PolicyLoopEnv

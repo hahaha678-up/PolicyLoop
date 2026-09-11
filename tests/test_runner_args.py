@@ -18,7 +18,7 @@ import argparse
 
 from isaaclab.app import AppLauncher
 
-from robolab.eval.runner import add_common_eval_args
+from policyloop.eval.runner import add_common_eval_args
 
 
 def test_common_eval_args_do_not_collide_with_app_launcher():

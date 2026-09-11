@@ -8,7 +8,7 @@ assets/
 !assets/scenes/
 !assets/objects/
 output/
-robolab_output/
+policyloop_output/
 .venv/
 .claude/
 debug/

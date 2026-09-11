@@ -1,6 +1,6 @@
 # Debugging
 
-RoboLab provides three global flags in `robolab.constants` for controlling debug output and visualization. All are `False` by default.
+PolicyLoop provides three global flags in `policyloop.constants` for controlling debug output and visualization. All are `False` by default.
 
 ## Flags
 
@@ -25,15 +25,15 @@ python policies/pi0_family/run.py --enable-verbose
 **Enable programmatically:**
 
 ```python
-import robolab.constants
-robolab.constants.VERBOSE = True
+import policyloop.constants
+policyloop.constants.VERBOSE = True
 ```
 
 ### `DEBUG`
 
 Prints per-step conditional evaluation results. This is very detailed and produces output every simulation step — useful for diagnosing why a specific subtask condition is or isn't being satisfied.
 
-Covers all conditional functions in `robolab.core.task.conditionals`:
+Covers all conditional functions in `policyloop.core.task.conditionals`:
 - `object_grabbed`, `object_dropped`, `object_picked_up`
 - `object_in_container`, `object_on_top`, `object_on_bottom`, `object_on_center`
 - `object_left_of`, `object_right_of`, `object_in_front_of`, `object_behind`
@@ -53,19 +53,19 @@ python policies/pi0_family/run.py --enable-debug
 **Enable programmatically:**
 
 ```python
-import robolab.constants
-robolab.constants.DEBUG = True
+import policyloop.constants
+policyloop.constants.DEBUG = True
 ```
 
 ### `VISUALIZE`
 
-Renders bounding boxes and pose axes for all tracked objects in the viewport at every simulation step. Used inside the episode loop in `robolab/eval/episode.py`.
+Renders bounding boxes and pose axes for all tracked objects in the viewport at every simulation step. Used inside the episode loop in `policyloop/eval/episode.py`.
 
 **Enable programmatically:**
 
 ```python
-import robolab.constants
-robolab.constants.VISUALIZE = True
+import policyloop.constants
+policyloop.constants.VISUALIZE = True
 ```
 
 When enabled, every step calls `get_world(env).visualize()`, which draws the oriented bounding box and coordinate axes for each object in the scene.
@@ -75,7 +75,7 @@ When enabled, every step calls `get_world(env).visualize()`, which draws the ori
 You can also call the visualization API directly at any point during execution, independently of the `VISUALIZE` flag:
 
 ```python
-from robolab.core.world.world_state import get_world
+from policyloop.core.world.world_state import get_world
 
 world = get_world(env)
 
@@ -109,7 +109,7 @@ python policies/pi0_family/run.py --enable-verbose --enable-debug
 `WorldState` (via `get_world(env)`) exposes methods useful for interactive debugging beyond visualization:
 
 ```python
-from robolab.core.world.world_state import get_world
+from policyloop.core.world.world_state import get_world
 
 world = get_world(env)
 
@@ -136,7 +136,7 @@ world.get_objects_supported_on("table")                # list of object names
 After registration, print a table of all registered environments to confirm tasks were discovered correctly:
 
 ```python
-from robolab.core.environments.factory import print_env_table
+from policyloop.core.environments.factory import print_env_table
 print_env_table()                       # All environments
 print_env_table(tag="semantics")       # Filter by tag
 print_env_table(verbose=True)           # Include full env config details
@@ -208,10 +208,10 @@ See [Known Issues](known_issues.md).
 
 ## Test startup on the current server
 
-The tests initialize PyTorch before launching Kit and accept extra Kit options through `ROBOLAB_KIT_ARGS`. The repository pytest configuration disables output capture (`-s`) so Kit can initialize its native logging without recursive capture. On the current server, Kit reports driver 535.309.01 as 535.53 and rejects the renderer. Use the following process-local setting when running the test commands on that server:
+The tests initialize PyTorch before launching Kit and accept extra Kit options through `POLICYLOOP_KIT_ARGS`. The repository pytest configuration disables output capture (`-s`) so Kit can initialize its native logging without recursive capture. On the current server, Kit reports driver 535.309.01 as 535.53 and rejects the renderer. Use the following process-local setting when running the test commands on that server:
 
 ```bash
-export ROBOLAB_KIT_ARGS="--/rtx/verifyDriverVersion/enabled=false"
+export POLICYLOOP_KIT_ARGS="--/rtx/verifyDriverVersion/enabled=false"
 python -m pytest tests/ -v
 ```
 

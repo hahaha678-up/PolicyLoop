@@ -1,6 +1,6 @@
-# RoboLab Subtask System: Comprehensive Guide
+# PolicyLoop Subtask System: Comprehensive Guide
 
-This guide provides a complete reference for defining subtasks in RoboLab, covering all supported formats, logical modes, and use cases.
+This guide provides a complete reference for defining subtasks in PolicyLoop, covering all supported formats, logical modes, and use cases.
 
 ## Table of Contents
 
@@ -30,7 +30,7 @@ This guide provides a complete reference for defining subtasks in RoboLab, cover
 
 ## Overview
 
-RoboLab uses a hierarchical state machine architecture to manage complex manipulation tasks involving multiple objects and sequential execution phases.
+PolicyLoop uses a hierarchical state machine architecture to manage complex manipulation tasks involving multiple objects and sequential execution phases.
 
 ## Subtask Definitions
 
@@ -57,7 +57,7 @@ Parallel execution with regression checking
 The `Subtask` dataclass is the core building block for defining task conditions. Each subtask must be completed before moving to the next subtask.
 
 ```python
-from robolab.core.task.subtask import Subtask
+from policyloop.core.task.subtask import Subtask
 
 @dataclass
 class Subtask:
@@ -79,8 +79,8 @@ The `conditions` parameter supports 8 different formats for convenience, but wil
 
 ```python
 from functools import partial
-from robolab.core.task.subtask import Subtask
-from robolab.core.task.conditionals import object_grabbed
+from policyloop.core.task.subtask import Subtask
+from policyloop.core.task.conditionals import object_grabbed
 Subtask(
     conditions=partial(object_grabbed, object='banana'),
     name="grab_banana"
@@ -424,7 +424,7 @@ def pick_and_place(
 **Examples**:
 
 ```python
-from robolab.core.task.conditionals import pick_and_place
+from policyloop.core.task.conditionals import pick_and_place
 
 # Example 1: Both objects must be placed
 subtasks = [
@@ -741,7 +741,7 @@ The **num_subtasks** metric counts the number of distinct manipulation actions t
 
 The total is summed across all sequential stages in the task. For example, a task with two sequential stages — the first requiring `"all"` of 2 objects, the second `"any"` of 3 — has `2 + 1 = 3` subtasks.
 
-See `count_subtasks()` in `robolab/core/task/subtask_utils.py`.
+See `count_subtasks()` in `policyloop/core/task/subtask_utils.py`.
 
 ### Difficulty Score
 
@@ -782,15 +782,15 @@ Labels are assigned based on the score using fixed thresholds:
 
 ### Implementation
 
-The scoring constants and function live in `robolab/core/task/subtask_utils.py`:
+The scoring constants and function live in `policyloop/core/task/subtask_utils.py`:
 
 - `SKILL_WEIGHTS` — attribute-to-weight mapping
 - `DIFFICULTY_THRESHOLDS` — `(simple_max, moderate_max)` tuple
 - `compute_difficulty_score(num_subtasks, attributes)` — returns `(score, label)`
 
-The metadata pipeline (`robolab/tasks/_utils/load_task_info.py`) automatically populates `num_subtasks`, `difficulty_score`, and `difficulty_label` for each task. Summary statistics are available via:
+The metadata pipeline (`policyloop/tasks/_utils/load_task_info.py`) automatically populates `num_subtasks`, `difficulty_score`, and `difficulty_label` for each task. Summary statistics are available via:
 
 ```bash
-python robolab/tasks/_utils/compute_task_statistics.py --difficulty
-python robolab/tasks/_utils/compute_task_statistics.py --difficulty -v  # full task list
+python policyloop/tasks/_utils/compute_task_statistics.py --difficulty
+python policyloop/tasks/_utils/compute_task_statistics.py --difficulty -v  # full task list
 ```

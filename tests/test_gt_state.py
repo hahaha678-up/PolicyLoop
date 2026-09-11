@@ -11,9 +11,9 @@ from types import SimpleNamespace
 import numpy as np
 import torch
 
-from robolab.core.events.subtask_recorder import SubtaskCompletionRecorderTerm
-from robolab.core.logging.recorder_manager import RobolabRecorderManager
-from robolab.eval.gt_state import GroundTruthStateExporter
+from policyloop.core.events.subtask_recorder import SubtaskCompletionRecorderTerm
+from policyloop.core.logging.recorder_manager import PolicyLoopRecorderManager
+from policyloop.eval.gt_state import GroundTruthStateExporter
 
 NUM_ENVS = 2
 
@@ -37,8 +37,8 @@ class _FakeSubtaskTerm(SubtaskCompletionRecorderTerm):
         ]
 
 
-def _make_manager(term) -> RobolabRecorderManager:
-    manager = RobolabRecorderManager(None, None)
+def _make_manager(term) -> PolicyLoopRecorderManager:
+    manager = PolicyLoopRecorderManager(None, None)
     manager._terms = {"subtask": term} if term is not None else {}
     return manager
 
@@ -88,7 +88,7 @@ def _make_env(term) -> SimpleNamespace:
 
 def _make_exporter(monkeypatch, term) -> tuple[GroundTruthStateExporter, _FakeWorld]:
     world = _FakeWorld()
-    monkeypatch.setattr("robolab.core.world.world_state.get_world", lambda env: world)
+    monkeypatch.setattr("policyloop.core.world.world_state.get_world", lambda env: world)
     env_cfg = SimpleNamespace(contact_object_list=["banana", "table", "robot"])
     return GroundTruthStateExporter(_make_env(term), env_cfg), world
 

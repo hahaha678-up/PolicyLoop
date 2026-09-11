@@ -32,8 +32,8 @@ import os
 
 from isaacsim import SimulationApp
 
-from robolab.constants import SCENE_DIR
-from robolab.core.scenes import utils as scene_utils
+from policyloop.constants import SCENE_DIR
+from policyloop.core.scenes import utils as scene_utils
 
 
 def clean_physics_for_export(stage):
@@ -98,7 +98,7 @@ def open_and_save_multiple_scenes(scene_paths: list[str], replace: bool = False,
     simulation_app = SimulationApp({"headless": True})
 
     if screenshot:
-        from robolab.core.utils.render_utils import render_stage_frame
+        from policyloop.core.utils.render_utils import render_stage_frame
         if screenshot_dir is None:
             screenshot_dir = os.path.join(SCENE_DIR, "_images")
 
@@ -152,7 +152,7 @@ if __name__ == "__main__":
     scene_paths = []
     for scene in args.scene:
         if os.path.isdir(scene):
-            from robolab.core.scenes.utils import get_scenes_from_folder
+            from policyloop.core.scenes.utils import get_scenes_from_folder
             scene_paths.extend(get_scenes_from_folder(scene))
         else:
             scene_path = scene_utils.find_scene_file(scene, SCENE_DIR)

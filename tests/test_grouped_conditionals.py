@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from functools import partial
 
-from robolab.core.task import conditionals
+from policyloop.core.task import conditionals
 
 
 def test_pick_and_place_grouped_builds_parallel_destination_ladders():

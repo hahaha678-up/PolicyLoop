@@ -1,6 +1,6 @@
 # Backgrounds
 
-RoboLab uses HDR/EXR environment maps rendered as dome lights to provide realistic scene backgrounds. A background config is a `@configclass` with a `dome_light` field and is passed as `background_cfg` during [environment registration](environment_registration.md). These configs can live in your own repository.
+PolicyLoop uses HDR/EXR environment maps rendered as dome lights to provide realistic scene backgrounds. A background config is a `@configclass` with a `dome_light` field and is passed as `background_cfg` during [environment registration](environment_registration.md). These configs can live in your own repository.
 
 ## Choosing a Background Strategy
 
@@ -16,7 +16,7 @@ Detail sections below: [Single fixed background](#using-a-background-config) · 
 
 ## Built-in Backgrounds
 
-RoboLab ships HDR/EXR background assets in `assets/backgrounds/` organized by category:
+PolicyLoop ships HDR/EXR background assets in `assets/backgrounds/` organized by category:
 
 ```
 assets/backgrounds/
@@ -29,7 +29,7 @@ Only a small curated set ships with the repo. For more variety — including out
 
 ### Pre-defined Background Configs
 
-Available in `robolab/variations/backgrounds.py`:
+Available in `policyloop/variations/backgrounds.py`:
 
 | Config | File | Description |
 |--------|------|-------------|
@@ -43,7 +43,7 @@ Available in `robolab/variations/backgrounds.py`:
 Import the config and pass it as `background_cfg` in your registration function (see [Environment Registration](environment_registration.md#step-2-write-a-registration-function) for the full example):
 
 ```python
-from robolab.variations.backgrounds import HomeOfficeBackgroundCfg
+from policyloop.variations.backgrounds import HomeOfficeBackgroundCfg
 
 # Inside your register_envs() function:
 auto_discover_and_create_cfgs(
@@ -89,7 +89,7 @@ Key parameters of `DomeLightCfg`:
 For programmatic generation (e.g., iterating over many HDR files), use the helper functions:
 
 ```python
-from robolab.variations.backgrounds import find_and_generate_background_config
+from policyloop.variations.backgrounds import find_and_generate_background_config
 
 # Generate a config from a specific file
 bg_config = find_and_generate_background_config(
@@ -107,7 +107,7 @@ auto_discover_and_create_cfgs(background_cfg=bg_config, ...)
 To generate from an absolute path directly:
 
 ```python
-from robolab.variations.backgrounds import generate_background_config
+from policyloop.variations.backgrounds import generate_background_config
 
 bg_config = generate_background_config(
     background_path="/absolute/path/to/scene.hdr",
@@ -119,7 +119,7 @@ bg_config = generate_background_config(
 
 > **Task × background matrix:** registers `N tasks × M backgrounds` envs (one per combination), so each task is evaluated separately under each background. Use this to measure robustness of the *same* task across *many* backgrounds.
 
-Registered via `auto_register_droid_envs_bg_variations()` in `robolab/registrations/droid/auto_env_registrations_bg_variations.py`. The built-in evaluation script `policies/pi0_family/run_background_variation.py` loops over the registered matrix and reports per-(task, bg) results.
+Registered via `auto_register_droid_envs_bg_variations()` in `policyloop/registrations/droid/auto_env_registrations_bg_variations.py`. The built-in evaluation script `policies/pi0_family/run_background_variation.py` loops over the registered matrix and reports per-(task, bg) results.
 
 > **Not what you want?** If you want each task in the benchmark to get *one* random background (so the run as a whole spans many backgrounds without inflating env count), use [Per-Run Random Background per Task](#per-run-random-background-per-task) instead.
 
@@ -128,7 +128,7 @@ Registered via `auto_register_droid_envs_bg_variations()` in `robolab/registrati
 `auto_register_droid_envs` accepts `randomize_background=True` to sample one random background per task at registration time (excluding the default `home_office.exr`). Each registered env gets one fixed background for the entire run; the chosen texture lands in the per-task `env_cfg.json` under `scene.background.dome_light.spawn.texture_file`.
 
 ```python
-from robolab.registrations.droid.auto_env_registrations_jointpos import auto_register_droid_envs
+from policyloop.registrations.droid.auto_env_registrations_jointpos import auto_register_droid_envs
 
 auto_register_droid_envs(
     randomize_background=True,
@@ -142,7 +142,7 @@ Or via `policies/pi0_family/run.py`:
 python policies/pi0_family/run.py --headless --randomize-background --background-seed 42
 ```
 
-Mechanism: a per-task factory closure is passed as `background_cfg`, and the factory (`robolab.core.environments.factory._resolve_per_task_kwargs`) invokes it once per task during registration. Without `--background-seed`, sampling is non-deterministic across invocations.
+Mechanism: a per-task factory closure is passed as `background_cfg`, and the factory (`policyloop.core.environments.factory._resolve_per_task_kwargs`) invokes it once per task during registration. Without `--background-seed`, sampling is non-deterministic across invocations.
 
 > **Not what you want?** If you want the *same* task evaluated across *several* backgrounds in one run, use [Task × background matrix](#background-variation-for-robustness-testing) instead.
 

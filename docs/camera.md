@@ -1,6 +1,6 @@
 # Cameras
 
-RoboLab supports two types of cameras: **scene cameras** (fixed in the world) and **robot-attached cameras** (mounted on the robot, e.g., wrist cameras). Both use IsaacLab's `TiledCameraCfg` and are passed into [environment registration](environment_registration.md) as config classes.
+PolicyLoop supports two types of cameras: **scene cameras** (fixed in the world) and **robot-attached cameras** (mounted on the robot, e.g., wrist cameras). Both use IsaacLab's `TiledCameraCfg` and are passed into [environment registration](environment_registration.md) as config classes.
 
 ## Scene Cameras
 
@@ -47,7 +47,7 @@ Key fields:
 
 ### Built-in Scene Cameras
 
-RoboLab ships several scene camera presets in `robolab/variations/camera.py`:
+PolicyLoop ships several scene camera presets in `policyloop/variations/camera.py`:
 
 | Config | Attribute Name | Description |
 |--------|---------------|-------------|
@@ -64,7 +64,7 @@ RoboLab ships several scene camera presets in `robolab/variations/camera.py`:
 Scene cameras are passed as `camera_cfg` (a single config or a list) in your registration function (see [Environment Registration](environment_registration.md#step-2-write-a-registration-function) for the full example):
 
 ```python
-from robolab.variations.camera import OverShoulderLeftCameraCfg, EgocentricMirroredCameraCfg
+from policyloop.variations.camera import OverShoulderLeftCameraCfg, EgocentricMirroredCameraCfg
 
 # Inside your register_envs() function:
 auto_discover_and_create_cfgs(
@@ -111,11 +111,11 @@ When defining your own robot with a wrist camera, ensure the camera's `prim_path
 
 Camera names in the observation config must match the attribute names on the camera config classes. For example, if your scene camera config has an attribute `over_shoulder_left_camera` and your robot config has `wrist_cam`, then your observation config references those same names.
 
-The quickest path is to let RoboLab generate the observation group from the same list of camera configs you attach to the scene:
+The quickest path is to let PolicyLoop generate the observation group from the same list of camera configs you attach to the scene:
 
 ```python
-from robolab.core.observations.observation_utils import generate_image_obs_from_cameras
-from robolab.registrations.droid.camera_presets import WRIST_LEFT
+from policyloop.core.observations.observation_utils import generate_image_obs_from_cameras
+from policyloop.registrations.droid.camera_presets import WRIST_LEFT
 
 ImageObsCfg = generate_image_obs_from_cameras(WRIST_LEFT)
 ```
@@ -151,7 +151,7 @@ The `SceneEntityCfg("over_shoulder_left_camera")` string must match the **attrib
 For robustness testing, you can randomize camera poses at episode reset. See [Running Environments — Initial Condition Randomization](environment_run.md#initial-condition-randomization):
 
 ```python
-from robolab.core.events.reset_camera import RandomizeCameraPoseUniform
+from policyloop.core.events.reset_camera import RandomizeCameraPoseUniform
 
 events = RandomizeCameraPoseUniform.from_params(
     cameras=["over_shoulder_left_camera"],

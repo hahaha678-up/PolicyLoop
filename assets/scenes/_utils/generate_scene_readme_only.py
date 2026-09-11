@@ -18,7 +18,7 @@ Usage:
     python generate_scene_readme_only.py --scene-folder /path/to/scenes
 
 Dependencies:
-    - robolab.core.utils.csv_utils
+    - policyloop.core.utils.csv_utils
 """
 
 import argparse
@@ -44,8 +44,8 @@ if __name__ == "__main__":
         2. Add image references to CSV data
         3. Generate markdown table with scene previews
     """
-    from robolab.constants import SCENE_DIR
-    from robolab.core.utils.csv_utils import add_images_to_csv, save_markdown_table
+    from policyloop.constants import SCENE_DIR
+    from policyloop.core.utils.csv_utils import add_images_to_csv, save_markdown_table
 
     # Set up argument parser
     parser = argparse.ArgumentParser(

@@ -5,7 +5,7 @@
 # Build the evaluation image from the selected Isaac Lab base.
 set -euo pipefail
 
-IMAGE_NAME="${ROBOLAB_REGISTRY:-robolab}"
+IMAGE_NAME="${POLICYLOOP_REGISTRY:-policyloop}"
 PUSH=false
 OPENPI_COMMIT=""
 # IsaacLab/IsaacSim stack selector -> base image tag (see docker/Dockerfile).
@@ -29,8 +29,8 @@ done
 # images from the same commit don't collide in the registry.
 IMAGE_TAG="${IMAGE_TAG:-$(git rev-parse --short HEAD)${TAG_SUFFIX}}"
 
-ROBOLAB_DOCKER_DIR="$(dirname "$(realpath -s "$0")")"
-ROBOLAB_DIR="$(realpath "${ROBOLAB_DOCKER_DIR}/../")"
+POLICYLOOP_DOCKER_DIR="$(dirname "$(realpath -s "$0")")"
+POLICYLOOP_DIR="$(realpath "${POLICYLOOP_DOCKER_DIR}/../")"
 
 echo "Building ${IMAGE_NAME}:${IMAGE_TAG}"
 
@@ -44,8 +44,8 @@ fi
 docker build -t "${IMAGE_NAME}:${IMAGE_TAG}" \
              --network=host \
              "${BUILD_ARGS[@]}" \
-             -f "${ROBOLAB_DOCKER_DIR}/Dockerfile" \
-             "${ROBOLAB_DIR}"
+             -f "${POLICYLOOP_DOCKER_DIR}/Dockerfile" \
+             "${POLICYLOOP_DIR}"
 
 echo "Built ${IMAGE_NAME}:${IMAGE_TAG}"
 

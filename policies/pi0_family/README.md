@@ -7,11 +7,11 @@ For pi0-family variants, pass `--policy {pi0,pi0_fast,pi05,paligemma,paligemma_f
 
 ## Install the server
 
-1. Clone [`git@github.com:xuningy/openpi.git`](https://github.com/xuningy/openpi) and follow install instructions there. **Do not** install OpenPI in the same virtual environment as RoboLab — it runs separately.
+1. Clone [`git@github.com:xuningy/openpi.git`](https://github.com/xuningy/openpi) and follow install instructions there. **Do not** install OpenPI in the same virtual environment as PolicyLoop — it runs separately.
 
-2. Install the OpenPI **client** in the RoboLab environment:
+2. Install the OpenPI **client** in the PolicyLoop environment:
    ```bash
-   cd robolab
+   cd policyloop
    uv pip install -e ../openpi/packages/openpi-client
    ```
 
@@ -51,10 +51,10 @@ XLA_PYTHON_CLIENT_MEM_FRACTION=0.5 uv run scripts/serve_policy.py policy:checkpo
 
 ## Run evaluation
 
-In the RoboLab terminal
+In the PolicyLoop terminal
 
 ```bash
-cd robolab
+cd PolicyLoop
 uv run python policies/pi0_family/run.py --policy pi05 --headless
 ```
 

@@ -8,7 +8,7 @@ from types import SimpleNamespace
 
 import torch
 
-from robolab.core.task import conditionals
+from policyloop.core.task import conditionals
 
 
 class _JointWorld:

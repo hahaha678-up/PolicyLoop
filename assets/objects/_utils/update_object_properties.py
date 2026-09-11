@@ -45,7 +45,7 @@ def update_physics_material_in_usd(
     Update physics material properties in a USD file.
 
     This function reads and writes USD files directly without requiring Isaac Sim.
-    For runtime updates within Isaac Sim, use robolab.core.utils.physics_utils.modify_friction()
+    For runtime updates within Isaac Sim, use policyloop.core.utils.physics_utils.modify_friction()
 
     Args:
         usd_path: Path to the USD file
@@ -74,7 +74,7 @@ def update_physics_material_in_usd(
     root_prim_path = str(default_prim.GetPath())
 
     # Get current values using our utility function
-    from robolab.core.utils.usd_utils import get_friction_info
+    from policyloop.core.utils.usd_utils import get_friction_info
     current_values = get_friction_info(default_prim, stage)
 
     if current_values is None:
@@ -173,7 +173,7 @@ Examples:
 
 Note:
   This script operates on USD files directly. For runtime updates within Isaac Sim,
-  use: from robolab.core.utils.physics_utils import modify_friction
+  use: from policyloop.core.utils.physics_utils import modify_friction
         """
     )
 

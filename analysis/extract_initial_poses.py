@@ -20,7 +20,7 @@ from typing import Any
 import h5py
 import numpy as np
 
-from robolab.constants import DEFAULT_OUTPUT_DIR
+from policyloop.constants import DEFAULT_OUTPUT_DIR
 
 # ANSI color codes for terminal output
 GREEN = '\033[92m'
@@ -136,7 +136,7 @@ def process_experiment_folder(
     # Try to load episode_metrics.json first, fall back to episode results (.jsonl or .json)
     episode_data = load_json(episode_metrics_file)
     if episode_data is None:
-        from robolab.core.logging.results import load_episode_results
+        from policyloop.core.logging.results import load_episode_results
         episode_data = load_episode_results(folder_path) or None
     if episode_data is None:
         if verbose:

@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from robolab.eval.base_client import InferenceClient
+from policyloop.eval.base_client import InferenceClient
 
 
 class _Client(InferenceClient):

@@ -31,8 +31,8 @@ import argparse
 import sys
 from pathlib import Path
 
-from robolab.constants import OBJECT_DIR
-from robolab.core.utils.file_utils import find_usd_files
+from policyloop.constants import OBJECT_DIR
+from policyloop.core.utils.file_utils import find_usd_files
 
 DEFAULT_PATHS = [
     Path(OBJECT_DIR) / "ycb",

@@ -1,6 +1,6 @@
 # Coordinate Frames
 
-RoboLab distinguishes three frames. Historically all three coincided for the
+PolicyLoop distinguishes three frames. Historically all three coincided for the
 Franka-family robots, so much of the stack was written as if they were one
 frame. This document is the contract that removes that assumption.
 
@@ -49,7 +49,7 @@ channels are **env-local**; the recorded root pose is the bridge between them.
 Policy actions with Cartesian content are interpreted **in the robot-root
 frame — always, for every robot**. This is not configurable: IsaacLab's
 differential-IK solves in the articulation's base frame and never references
-the env origin, and RoboLab relies on that. It also means floor-standing
+the env origin, and PolicyLoop relies on that. It also means floor-standing
 robots need no action-side special-casing — the solver never assumed the root
 was at the origin in the first place.
 
@@ -73,6 +73,6 @@ Recordings made before this contract carry no frame metadata. They were all
 produced with Franka-family robots (root at env origin, identity rotation), so
 their env-local values are byte-identical to robot-root values — every old file
 remains valid under the new interpretation. The single compatibility rule,
-implemented in one place (`robolab/core/logging/frame_compat.py`): **a demo
+implemented in one place (`policyloop/core/logging/frame_compat.py`): **a demo
 without a `robot_root_pose` group is Franka-era; its root pose is identity.**
 Do not re-implement this assumption anywhere else.

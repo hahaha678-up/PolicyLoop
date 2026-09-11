@@ -24,7 +24,7 @@ from typing import Any, Dict, List
 
 from common import get_dataset_from_path, iter_object_files, load_catalog, print_object_info
 
-from robolab.constants import OBJECT_CATALOG_PATH, OBJECT_DIR
+from policyloop.constants import OBJECT_CATALOG_PATH, OBJECT_DIR
 
 
 def generate_catalog(objects_dir: Path = Path(OBJECT_DIR), verbose: bool = False) -> List[Dict[str, Any]]:
@@ -38,8 +38,8 @@ def generate_catalog(objects_dir: Path = Path(OBJECT_DIR), verbose: bool = False
     Returns:
         List of object info dictionaries (with paths relative to PACKAGE_DIR)
     """
-    from robolab.constants import PACKAGE_DIR
-    from robolab.core.utils.usd_utils import get_usd_rigid_body_info
+    from policyloop.constants import PACKAGE_DIR
+    from policyloop.core.utils.usd_utils import get_usd_rigid_body_info
     
     catalog: List[Dict[str, Any]] = []
     

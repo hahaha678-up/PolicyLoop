@@ -9,8 +9,8 @@ import json
 from pathlib import Path
 from typing import Any, Dict, List
 
-from robolab.constants import OBJECT_CATALOG_PATH, OBJECT_DIR
-from robolab.core.utils.file_utils import find_usd_files
+from policyloop.constants import OBJECT_CATALOG_PATH, OBJECT_DIR
+from policyloop.core.utils.file_utils import find_usd_files
 
 
 def iter_object_files(root: Path = Path(OBJECT_DIR)) -> List[Path]:
@@ -91,5 +91,5 @@ def resolve_usd_path(relative_path: str) -> str:
     Returns:
         Absolute path string
     """
-    from robolab.constants import resolve_catalog_path
+    from policyloop.constants import resolve_catalog_path
     return resolve_catalog_path(relative_path)

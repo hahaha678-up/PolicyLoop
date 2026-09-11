@@ -13,7 +13,7 @@ import os
 import pytest
 from pxr import Usd, UsdGeom
 
-from robolab.constants import SCENE_DIR
+from policyloop.constants import SCENE_DIR
 
 CANONICAL_GROUND_Z = -0.697
 

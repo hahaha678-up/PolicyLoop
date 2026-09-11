@@ -4,7 +4,7 @@
 import argparse
 import os
 
-from robolab.constants import OBJECT_DIR, SCENE_DIR
+from policyloop.constants import OBJECT_DIR, SCENE_DIR
 
 
 def _find_usd_files_excluding_materials(dataset_path: str):
@@ -24,8 +24,8 @@ def main():
     from isaacsim import SimulationApp
     app = SimulationApp({'headless': True})
 
-    from robolab.core.utils.usd_utils import get_aabb # noqa
-    from robolab.core.utils.render_utils import render_stage_frame # noqa
+    from policyloop.core.utils.usd_utils import get_aabb # noqa
+    from policyloop.core.utils.render_utils import render_stage_frame # noqa
 
     parser = argparse.ArgumentParser(description="Render object dataset screenshots")
     parser.add_argument('--datasets', nargs='+', default=['hope'], help="Datasets to render under assets/objects (e.g., vomp hope ycb)")

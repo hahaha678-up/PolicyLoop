@@ -2,10 +2,10 @@
 # SPDX-License-Identifier: Apache-2.0
 # isort: skip_file
 
-"""Pytest configuration for RoboLab install-verification tests.
+"""Pytest configuration for PolicyLoop install-verification tests.
 
 Boots Isaac Sim once at conftest load so test files can freely import
-isaaclab/robolab modules at their top level. Auto-accepts the Omniverse
+isaaclab/policyloop modules at their top level. Auto-accepts the Omniverse
 EULA so a fresh install works headless without any prompts.
 """
 
@@ -28,7 +28,7 @@ _launcher = AppLauncher(
     headless=True,
     enable_cameras=True,
     fast_shutdown=False,
-    kit_args=os.environ.get("ROBOLAB_KIT_ARGS", ""),
+    kit_args=os.environ.get("POLICYLOOP_KIT_ARGS", ""),
     carb_settings={
         "/log/level": "warn",
         "/log/outputStreamLevel": "warn",
@@ -59,7 +59,7 @@ import pytest
 @pytest.fixture(autouse=True)
 def isolated_test_output(tmp_path, monkeypatch):
     """Keep simulation logs separate from saved experiment output."""
-    import robolab.constants as constants
+    import policyloop.constants as constants
     monkeypatch.setattr(constants, "_output_dir", str(tmp_path))
 
 

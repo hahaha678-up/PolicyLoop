@@ -21,7 +21,7 @@ import numpy as np
 import torch
 from isaaclab.utils.math import combine_frame_transforms, subtract_frame_transforms
 
-from robolab.core.logging.frame_compat import demo_robot_root_pose
+from policyloop.core.logging.frame_compat import demo_robot_root_pose
 
 
 def test_frame_compat_fallback(tmp_path):
@@ -92,9 +92,9 @@ def test_recorded_episode_frame_contract():
         import pytest
         pytest.skip("CUDA device required for a recorded episode")
 
-    from robolab.core.environments.factory import get_envs
-    from robolab.core.environments.runtime import create_env, end_episode
-    from robolab.registrations.droid.auto_env_registrations_jointpos import auto_register_droid_envs
+    from policyloop.core.environments.factory import get_envs
+    from policyloop.core.environments.runtime import create_env, end_episode
+    from policyloop.registrations.droid.auto_env_registrations_jointpos import auto_register_droid_envs
 
     auto_register_droid_envs(task="BananaInBowlTask")
     env_name = get_envs(task="BananaInBowlTask")[0]

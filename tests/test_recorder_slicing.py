@@ -15,7 +15,7 @@ without raising and preserve their dtype.
 import pytest
 import torch
 
-from robolab.core.logging.recorder_manager import _slice_to_envs
+from policyloop.core.logging.recorder_manager import _slice_to_envs
 
 
 @pytest.mark.parametrize("dtype", [torch.uint16, torch.float32, torch.int64])

@@ -6,7 +6,7 @@ Contact sensors are automatically created during environment configuration to de
 
 ### How sensors are created
 
-When environments are generated, RoboLab dynamically creates contact sensors based on two configuration fields:
+When environments are generated, PolicyLoop dynamically creates contact sensors based on two configuration fields:
 
 1. **`contact_object_list`**: List of object names to monitor (defined in the Task class)
 
@@ -17,7 +17,7 @@ When environments are generated, RoboLab dynamically creates contact sensors bas
         scene = import_scene("my_scene.usda", contact_object_list)
     ```
 
-2. **`contact_gripper`**: Dictionary mapping gripper names to prim path patterns (defined in robot configs, e.g., `robolab/robots/droid.py`)
+2. **`contact_gripper`**: Dictionary mapping gripper names to prim path patterns (defined in robot configs, e.g., `policyloop/robots/droid.py`)
 
 
 Three types of sensors are created. In the code, objects are separated by two underscores `__`.
@@ -38,9 +38,9 @@ This ensures `get_contact_force(obj, surface)` returns an upward force (positive
 
 ### Usage
 
-This information is accessible via RoboLab's world state:
+This information is accessible via PolicyLoop's world state:
 ```python
-# Querying contact forces (robolab/core/world/world_state.py)
+# Querying contact forces (policyloop/core/world/world_state.py)
 world = get_world(env)
 force = world.get_contact_force("apple", "table")  # Force on apple from table
 supported = world.is_supported_on_surface("apple", "plate")  # Contact force cone check
@@ -48,8 +48,8 @@ supported = world.is_supported_on_surface("apple", "plate")  # Contact force con
 
 ### Key files
 
-- `robolab/core/sensors/contact_sensor_utils.py`: Sensor creation and lookup functions
-- `robolab/core/world/world_state.py`: `get_contact_force()`, `is_supported_on_surface()`
+- `policyloop/core/sensors/contact_sensor_utils.py`: Sensor creation and lookup functions
+- `policyloop/core/world/world_state.py`: `get_contact_force()`, `is_supported_on_surface()`
 
 
 ## Subtask and failure mode tracker creation

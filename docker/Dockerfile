@@ -28,20 +28,20 @@ RUN /workspace/isaaclab/_isaac_sim/python.sh -m pip install --no-cache-dir --no-
 # Assets — each subdirectory is a separate layer for better caching.
 # Placed before code COPY so they stay cached across code changes.
 # Ordered smallest to largest so cheaper layers come first.
-COPY assets/robots/      /workspace/robolab/assets/robots/
-COPY assets/materials/   /workspace/robolab/assets/materials/
-COPY assets/fixtures/    /workspace/robolab/assets/fixtures/
-COPY assets/backgrounds/ /workspace/robolab/assets/backgrounds/
-COPY assets/scenes/      /workspace/robolab/assets/scenes/
-COPY assets/objects/     /workspace/robolab/assets/objects/
+COPY assets/robots/      /workspace/policyloop/assets/robots/
+COPY assets/materials/   /workspace/policyloop/assets/materials/
+COPY assets/fixtures/    /workspace/policyloop/assets/fixtures/
+COPY assets/backgrounds/ /workspace/policyloop/assets/backgrounds/
+COPY assets/scenes/      /workspace/policyloop/assets/scenes/
+COPY assets/objects/     /workspace/policyloop/assets/objects/
 
 # Accept NVIDIA/Isaac Sim EULAs
 ENV OMNI_KIT_ACCEPT_EULA=YES
 ENV ACCEPT_EULA=Y
 
 # Copy project code and metadata from the filtered build context.
-COPY . /workspace/robolab
-WORKDIR /workspace/robolab
+COPY . /workspace/policyloop
+WORKDIR /workspace/policyloop
 
 # Install Python dependencies
 # GIT_LFS_SKIP_SMUDGE=1 avoids pulling large LFS objects during build

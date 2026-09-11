@@ -1,0 +1,185 @@
+
+================================================================================
+POLICYLOOP TASK STATISTICS — FULL REPORT
+Total tasks: 8
+================================================================================
+
+## TASKS BY SUBFOLDER
+----------------------------------------
+  benchmark                :   8 tasks (100.0%)
+
+====================================================================================================
+TASK ATTRIBUTES SUMMARY
+Total unique attributes: 6
+Total tasks scanned: 8
+====================================================================================================
+Attribute     | Count
+-----------------------
+visual        |     3
+  color       |     1
+  semantics   |     2
+relational    |     5
+  conjunction |     3
+  counting    |     1
+  spatial     |     1
+procedural    |     2
+  stacking    |     2
+-----------------------
+
+====================================================================================================
+DETAILED BREAKDOWN BY ATTRIBUTE
+====================================================================================================
+COLOR (1 tasks):
+   1. BlockStackingSpecifiedOrderTask (benchmark/block_stacking_specified_order_task.py)
+CONJUNCTION (3 tasks):
+   1. BananaThenRubiksCubeTask (benchmark/banana_then_rubiks_cube.py)
+   2. RubiksCubeAndBananaTask (benchmark/rubiks_cube_and_banana_task.py)
+   3. RubiksCubeOrBananaTask (benchmark/rubiks_cube_or_banana_task.py)
+COUNTING (1 tasks):
+   1. BananasInBinThreeTotalTask (benchmark/bananas_in_bin_three.py)
+SEMANTICS (2 tasks):
+   1. BananaInBowlTask (benchmark/banana_in_bowl_task.py)
+   2. BananasInBinThreeTotalTask (benchmark/bananas_in_bin_three.py)
+SPATIAL (1 tasks):
+   1. RubiksCubeLeftOfBowlTask (benchmark/rubiks_cube_left_of_bowl.py)
+STACKING (2 tasks):
+   1. BlockStackingOrderAgnosticTask (benchmark/block_stacking_order_agnostic_task.py)
+   2. BlockStackingSpecifiedOrderTask (benchmark/block_stacking_specified_order_task.py)
+
+================================================================================
+ATTRIBUTE BREAKDOWN BY CATEGORY
+================================================================================
+
+  Visual:
+    semantics      :   2 ( 66.7%)
+    color          :   1 ( 33.3%)
+
+  Relational:
+    conjunction    :   3 ( 60.0%)
+    counting       :   1 ( 20.0%)
+    spatial        :   1 ( 20.0%)
+
+  Procedural:
+    stacking       :   2 (100.0%)
+
+================================================================================
+OBJECT STATISTICS
+================================================================================
+Unique objects (exact): 12
+Unique objects (normalized, excl. duplicates like mug_01/mug_02): 8
+Total object instances across all tasks: 28
+Average objects per task: 3.5
+Min objects in a task: 2
+Max objects in a task: 6
+
+  Top 20 Most Used Objects (normalized names):
+    banana                   :  10 tasks
+    bowl                     :   5 tasks
+    rubiks_cube              :   4 tasks
+    red_block                :   2 tasks
+    blue_block               :   2 tasks
+    green_block              :   2 tasks
+    yellow_block             :   2 tasks
+    grey_bin                 :   1 tasks
+
+  Objects Used in Multiple Tasks (top 30):
+    banana                        : appears in   6 tasks
+    bowl                          : appears in   5 tasks
+    rubiks_cube                   : appears in   4 tasks
+    red_block                     : appears in   2 tasks
+    blue_block                    : appears in   2 tasks
+    green_block                   : appears in   2 tasks
+    yellow_block                  : appears in   2 tasks
+
+================================================================================
+SUBTASK COMPLEXITY
+================================================================================
+Average sequential stages per task: 1.62
+Average atomic conditions per task: 2.88
+
+Sequential stage count distribution:
+    1 stage(s): 5 tasks
+    2 stage(s): 1 tasks
+    3 stage(s): 2 tasks
+
+================================================================================
+SUBTASK COUNTS
+================================================================================
+num_subtasks = number of distinct manipulation actions required,
+accounting for logical mode (all/any/choose).
+
+Average subtasks per task: 2.00
+Min: 1
+Max: 3
+
+Distribution:
+    1 subtask(s):   3 tasks
+    2 subtask(s):   2 tasks
+    3 subtask(s):   3 tasks
+
+Tasks with most subtasks:
+   1. BlockStackingOrderAgnosticTask                3 subtask(s)  (benchmark/block_stacking_order_agnostic_task.py)
+   2. BlockStackingSpecifiedOrderTask               3 subtask(s)  (benchmark/block_stacking_specified_order_task.py)
+   3. RubiksCubeLeftOfBowlTask                      3 subtask(s)  (benchmark/rubiks_cube_left_of_bowl.py)
+   4. BananaThenRubiksCubeTask                      2 subtask(s)  (benchmark/banana_then_rubiks_cube.py)
+   5. RubiksCubeAndBananaTask                       2 subtask(s)  (benchmark/rubiks_cube_and_banana_task.py)
+   6. BananaInBowlTask                              1 subtask(s)  (benchmark/banana_in_bowl_task.py)
+   7. BananasInBinThreeTotalTask                    1 subtask(s)  (benchmark/bananas_in_bin_three.py)
+   8. RubiksCubeOrBananaTask                        1 subtask(s)  (benchmark/rubiks_cube_or_banana_task.py)
+
+================================================================================
+DIFFICULTY SCORING
+================================================================================
+score = num_subtasks + max(skill_weight)
+Thresholds: simple <= 2, moderate <= 4, complex > 4
+Skill weights: {'color': 0, 'semantics': 0, 'size': 0, 'conjunction': 0, 'vague': 0, 'spatial': 1, 'counting': 2, 'sorting': 2, 'stacking': 2, 'affordance': 2, 'reorientation': 3}
+
+Average difficulty score: 2.88
+Score range: 1 – 5
+
+Distribution by label:
+    simple    :   4 tasks ( 50.0%)
+    moderate  :   2 tasks ( 25.0%)
+    complex   :   2 tasks ( 25.0%)
+
+Score histogram:
+    score  1:   2 ##
+    score  2:   2 ##
+    score  3:   1 #
+    score  4:   1 #
+    score  5:   2 ##
+
+All tasks by difficulty (highest first):
+    1. BlockStackingOrderAgnosticTask                score= 5  num_subtasks=3  [complex]  (stacking)
+    2. BlockStackingSpecifiedOrderTask               score= 5  num_subtasks=3  [complex]  (stacking, color)
+    3. RubiksCubeLeftOfBowlTask                      score= 4  num_subtasks=3  [moderate]  (spatial)
+    4. BananasInBinThreeTotalTask                    score= 3  num_subtasks=1  [moderate]  (semantics, counting)
+    5. BananaThenRubiksCubeTask                      score= 2  num_subtasks=2  [simple]  (conjunction)
+    6. RubiksCubeAndBananaTask                       score= 2  num_subtasks=2  [simple]  (conjunction)
+    7. BananaInBowlTask                              score= 1  num_subtasks=1  [simple]  (semantics)
+    8. RubiksCubeOrBananaTask                        score= 1  num_subtasks=1  [simple]  (conjunction)
+
+================================================================================
+EPISODE LENGTH ANALYSIS
+================================================================================
+Average episode length: 58.8 seconds
+Min episode length: 30 seconds
+Max episode length: 90 seconds
+
+Average episode length by difficulty:
+    simple         :   50.0 seconds (n=4)
+    moderate       :   45.0 seconds (n=2)
+    complex        :   90.0 seconds (n=2)
+
+================================================================================
+SCENE USAGE
+================================================================================
+Total unique scenes: 4
+
+Most used scenes (top 15):
+    rubiks_cube_banana_bowl.usda                 :   4 tasks
+    colored_blocks.usda                          :   2 tasks
+    banana_bowl.usda                             :   1 tasks
+    bananas_5_grey_bin.usda                      :   1 tasks
+
+================================================================================

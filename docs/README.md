@@ -2,9 +2,9 @@
 
 The bundled scope is [8 tasks and 5 scenes](benchmark.md). The scene template and explicitly authored custom tasks are separate from the default evaluation task list.
 
-## How RoboLab Works
+## How PolicyLoop Works
 
-RoboLab dynamically combines **tasks** with user-specified **robot**, **observations**, **actions**, and **simulation parameters** at environment registration time.
+PolicyLoop dynamically combines **tasks** with user-specified **robot**, **observations**, **actions**, and **simulation parameters** at environment registration time.
 
 ## Terminology
 
@@ -48,7 +48,7 @@ The core concepts are:
 - **[Known Issues](known_issues.md)** — Documented bugs and workarounds
 
 
-## Developing and Working with RoboLab
+## Developing and Working with PolicyLoop
 
 If you're building a new benchmark and a new experiment workflow, follow the steps below in order.
 Otherwise, pick whichever applies to your use case.
@@ -78,5 +78,5 @@ Otherwise, pick whichever applies to your use case.
 
 ### AI Workflows
 
-- **[Scene Generation](scene.md#ai-workflows-scene-generation)** — A scene-authoring workflow with physics settling and screenshot validation; provide the skill instructions to your assistant. See [`skills/robolab-scenegen/`](../skills/robolab-scenegen/).
+- **[Scene Generation](scene.md#ai-workflows-scene-generation)** — A scene-authoring workflow with physics settling and screenshot validation; provide the skill instructions to your assistant. See [`skills/policyloop-scenegen/`](../skills/policyloop-scenegen/).
 - **[Task Authoring](task.md)** — Define a task with the retained conditionals and state machine.

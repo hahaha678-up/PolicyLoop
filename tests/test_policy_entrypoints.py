@@ -8,9 +8,9 @@ from types import SimpleNamespace
 import pytest
 from isaaclab.app import AppLauncher
 
-import robolab.constants as constants
-import robolab.core.environments.factory as factory
-from robolab.registrations.droid.auto_env_registrations_bg_variations import BACKGROUND_FILES
+import policyloop.constants as constants
+import policyloop.core.environments.factory as factory
+from policyloop.registrations.droid.auto_env_registrations_bg_variations import BACKGROUND_FILES
 from tests.test_registered_envs import isolated_registry
 from tests.test_repository_boundary import TASK_SCENES
 

@@ -9,7 +9,7 @@ from types import SimpleNamespace
 
 import torch
 
-from robolab.core.observations.observation_utils import (
+from policyloop.core.observations.observation_utils import (
     generate_object_state_obs,
     object_pos,
     object_quat,

@@ -29,9 +29,9 @@ Usage:
 
 Dependencies:
     - Isaac Lab (isaaclab.app)
-    - robolab.core.utils.usd_utils
-    - robolab.core.utils.file_utils
-    - robolab.core.utils.csv_utils
+    - policyloop.core.utils.usd_utils
+    - policyloop.core.utils.file_utils
+    - policyloop.core.utils.csv_utils
 """
 
 import json
@@ -123,8 +123,8 @@ def generate_scene_metadata(scene_folder: str, output_folder: str, ignore_files:
         - Provides detailed console feedback during processing
     """
 
-    from robolab.core.utils.file_utils import find_usd_files
-    from robolab.core.utils.usd_utils import get_usd_objects_info
+    from policyloop.core.utils.file_utils import find_usd_files
+    from policyloop.core.utils.usd_utils import get_usd_objects_info
 
     # Validate folder path
     if not os.path.exists(scene_folder):
@@ -224,7 +224,7 @@ if __name__ == "__main__":
 
     # Set up argument parser (parsed before importing heavy dependencies to allow --help without waiting)
     parser = argparse.ArgumentParser(description="Analyze USD files in a folder to extract rigid bodies and static bodies")
-    from robolab.constants import SCENE_DIR
+    from policyloop.constants import SCENE_DIR
     parser.add_argument("--scene-folder", default=SCENE_DIR, help="Path to the folder containing USD files to analyze")
     parser.add_argument("--scene", help="Specific USD scene file to process (overrides --scene-folder)")
     parser.add_argument("--output-folder", default=os.path.join(SCENE_DIR, "_metadata"), help="Path to the folder to save the results")
@@ -277,7 +277,7 @@ if __name__ == "__main__":
     # Generate Markdown table with images
     csv_file_path = os.path.join(args.output_folder, 'scene_table.csv')
 
-    from robolab.core.utils.csv_utils import add_images_to_csv, save_markdown_table
+    from policyloop.core.utils.csv_utils import add_images_to_csv, save_markdown_table
     csv_data_with_images = add_images_to_csv(
         csv_file_path=csv_file_path,
         image_dir=os.path.join(SCENE_DIR, '_images'),

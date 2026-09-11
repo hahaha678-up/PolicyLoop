@@ -6,7 +6,7 @@ import logging
 import numpy as np
 from openpi_client import image_tools, websocket_client_policy
 
-from robolab.eval.base_client import InferenceClient
+from policyloop.eval.base_client import InferenceClient
 
 logger = logging.getLogger(__name__)
 

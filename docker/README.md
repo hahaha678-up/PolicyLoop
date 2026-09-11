@@ -4,7 +4,7 @@
 
 - Docker with NVIDIA Container Toolkit (`nvidia-docker2`)
 - Access to `nvcr.io/nvidia/isaac-lab:2.2.0` (base image; use `:2.3.0` for the IsaacSim 5.1 / IsaacLab 2.3 stack)
-- To push the built image, a container registry of your own (set `ROBOLAB_REGISTRY` to its image path prefix)
+- To push the built image, a container registry of your own (set `POLICYLOOP_REGISTRY` to its image path prefix)
 
 ## Build
 
@@ -46,7 +46,7 @@ docker run --rm \
     --network=host \
     --entrypoint /workspace/isaaclab/_isaac_sim/python.sh \
     -e ACCEPT_EULA=Y \
-    robolab:<tag> \
+    policyloop:<tag> \
     <script.py> [args...]
 ```
 
@@ -60,13 +60,13 @@ docker run --rm -it \
     -e ACCEPT_EULA=Y \
     -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    robolab:<tag>
+    policyloop:<tag>
 ```
 
 ## What's in the image
 
 - **Base**: `nvcr.io/nvidia/isaac-lab:2.2.0` (IsaacSim 5.0) or `:2.3.0` (IsaacSim 5.1), selected via the `ISAACLAB_TAG` build arg (`build_docker.sh --isaac51`)
-- **Code**: `robolab/`, `scripts/`, `tests/`
+- **Code**: `policyloop/`, `scripts/`, `tests/`
 - **Assets**: `assets/` (about 613 MiB; 5 scenes and the retained object/robot/material resources)
 - **Python packages**: Everything in `requirements.txt`, installed via `pip install -e .`
 - **System tools**: `htop`, `nvtop`, `tmux`, `vim`, `git-lfs`, `zip`

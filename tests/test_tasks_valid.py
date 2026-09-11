@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 
-"""Verify every task definition in robolab/tasks/benchmark/ is valid.
+"""Verify every task definition in policyloop/tasks/benchmark/ is valid.
 
 Parametrized over each discovered task file so failures name the offender.
 """
@@ -10,9 +10,9 @@ import os
 
 import pytest
 
-from robolab.constants import DEFAULT_TASK_SUBFOLDERS, TASK_DIR
-from robolab.core.task.task import verify_task_valid
-from robolab.core.task.task_utils import find_task_files, load_task_from_file
+from policyloop.constants import DEFAULT_TASK_SUBFOLDERS, TASK_DIR
+from policyloop.core.task.task import verify_task_valid
+from policyloop.core.task.task_utils import find_task_files, load_task_from_file
 
 
 def _all_task_files():

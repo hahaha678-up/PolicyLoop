@@ -5,7 +5,7 @@
 
 import pytest
 
-from robolab.core.sensors.contact_sensor_utils import validate_contact_grippers
+from policyloop.core.sensors.contact_sensor_utils import validate_contact_grippers
 
 
 def test_single_arm_declaration_passes():

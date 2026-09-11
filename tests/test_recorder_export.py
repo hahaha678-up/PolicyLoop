@@ -16,7 +16,7 @@ import h5py
 import numpy as np
 import torch
 
-from robolab.core.logging.streaming_hdf5_handler import StreamingHDF5DatasetFileHandler as Handler
+from policyloop.core.logging.streaming_hdf5_handler import StreamingHDF5DatasetFileHandler as Handler
 
 
 def test_append_to_dataset_coerces_nontensor_leaves(tmp_path):

@@ -26,9 +26,9 @@ import isaaclab.envs.mdp as mdp
 from isaaclab.managers import TerminationTermCfg as DoneTerm
 from isaaclab.utils import configclass
 
-from robolab.core.scenes.utils import import_scene
-from robolab.core.task.conditionals import object_in_container, pick_and_place
-from robolab.core.task.task import Task
+from policyloop.core.scenes.utils import import_scene
+from policyloop.core.task.conditionals import object_in_container, pick_and_place
+from policyloop.core.task.task import Task
 
 SCENE_DIR = os.path.join(os.path.dirname(__file__), "..", "scenes")
 
@@ -96,12 +96,12 @@ class Task:
 
 ## Importing Scenes
 
-Use `import_scene()` to load a USD scene. For scenes inside the RoboLab repo, pass the filename — it will be found automatically. For scenes in your own repository, use an absolute path:
+Use `import_scene()` to load a USD scene. For scenes inside the PolicyLoop repo, pass the filename — it will be found automatically. For scenes in your own repository, use an absolute path:
 
 ```python
-from robolab.core.scenes.utils import import_scene
+from policyloop.core.scenes.utils import import_scene
 
-# RoboLab built-in scene (resolved automatically)
+# PolicyLoop built-in scene (resolved automatically)
 scene = import_scene("banana_bowl.usda", contact_object_list)
 
 # External scene (absolute path)
@@ -120,7 +120,7 @@ scene = import_scene(os.path.join(SCENE_DIR, "my_scene.usda"), contact_object_li
 If you don't want to manually enumerate contact objects, `import_scene_and_contact_object_list` extracts all dynamic rigid bodies from the scene automatically:
 
 ```python
-from robolab.core.scenes.utils import import_scene_and_contact_object_list
+from policyloop.core.scenes.utils import import_scene_and_contact_object_list
 
 MyScene, contact_object_list = import_scene_and_contact_object_list("/path/to/my_scene.usda")
 # contact_object_list = ["apple", "bowl", "spoon", ...]
@@ -229,7 +229,7 @@ class BananaInBowlUniformInitPose10cmTask(Task):
 Subtasks provide granular progress tracking within an episode. They are optional — omitting `subtasks` turns off subtask checking.
 
 ```python
-from robolab.core.task.conditionals import pick_and_place
+from policyloop.core.task.conditionals import pick_and_place
 
 @dataclass
 class MyTask(Task):
@@ -243,7 +243,7 @@ See [Subtask Checking](subtask.md) for the full API including scoring.
 
 ## Available Conditional Functions
 
-Imported from `robolab.core.task.conditionals`, used in termination and subtask definitions:
+Imported from `policyloop.core.task.conditionals`, used in termination and subtask definitions:
 
 | Function | Description |
 |----------|-------------|
@@ -282,7 +282,7 @@ You must validate your tasks after generation. See [Task Libraries](task_librari
 
 ## Task Authoring after Scene Generation
 
-Use the [Scene Generation Skill](../skills/robolab-scenegen/SKILL.md) to compose a scene, then define a Task class following the examples on this page. The built-in library remains the eight tasks listed in [benchmark.md](benchmark.md); newly authored tasks must be registered explicitly.
+Use the [Scene Generation Skill](../skills/policyloop-scenegen/SKILL.md) to compose a scene, then define a Task class following the examples on this page. The built-in library remains the eight tasks listed in [benchmark.md](benchmark.md); newly authored tasks must be registered explicitly.
 
 ## Register and Run
 

@@ -1,4 +1,4 @@
 # SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 
-"""Pytest install-verification tests for RoboLab."""
+"""Pytest install-verification tests for PolicyLoop."""

@@ -31,7 +31,7 @@ parser.add_argument("--randomize-background", "--randomize_background", action="
 parser.add_argument("--background-seed", "--background_seed", type=int, default=None,
                     help="Seed for reproducible per-task background sampling.")
 
-from robolab.eval.runner import add_common_eval_args, run_evaluation  # noqa: E402
+from policyloop.eval.runner import add_common_eval_args, run_evaluation  # noqa: E402
 
 add_common_eval_args(parser)
 AppLauncher.add_app_launcher_args(parser)
@@ -42,15 +42,15 @@ args_cli.enable_cameras = True
 app_launcher = AppLauncher(args_cli)
 simulation_app = app_launcher.app
 
-import robolab.constants  # noqa: E402
-from robolab.registrations.droid.auto_env_registrations_jointpos import auto_register_droid_envs  # noqa: E402
+import policyloop.constants  # noqa: E402
+from policyloop.registrations.droid.auto_env_registrations_jointpos import auto_register_droid_envs  # noqa: E402
 
 from policies.gr00t.client import GR00TDroidJointposClient  # noqa: E402
 
-robolab.constants.ENABLE_SUBTASK_PROGRESS_CHECKING = args_cli.enable_subtask
-robolab.constants.RECORD_IMAGE_DATA = args_cli.record_image_data
-robolab.constants.VERBOSE = args_cli.enable_verbose
-robolab.constants.DEBUG = args_cli.enable_debug
+policyloop.constants.ENABLE_SUBTASK_PROGRESS_CHECKING = args_cli.enable_subtask
+policyloop.constants.RECORD_IMAGE_DATA = args_cli.record_image_data
+policyloop.constants.VERBOSE = args_cli.enable_verbose
+policyloop.constants.DEBUG = args_cli.enable_debug
 
 auto_register_droid_envs(
     task_dirs=args_cli.task_dirs,
@@ -78,7 +78,7 @@ if __name__ == "__main__":
     try:
         main()
     except Exception as e:
-        print(f"\033[96m[RoboLab] Terminated with error: {e}\033[0m")
+        print(f"\033[96m[PolicyLoop] Terminated with error: {e}\033[0m")
         traceback.print_exc()
         simulation_app.close()
         sys.exit(1)

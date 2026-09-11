@@ -21,14 +21,14 @@ Usage:
 
 Dependencies:
     - Isaac Sim (isaacsim package)
-    - robolab.core.utils.render_utils
-    - robolab.core.utils.file_utils
+    - policyloop.core.utils.render_utils
+    - policyloop.core.utils.file_utils
 """
 
 import argparse
 import os
 
-from robolab.constants import SCENE_DIR
+from policyloop.constants import SCENE_DIR
 
 
 def generate_scene_screenshots(
@@ -77,8 +77,8 @@ def generate_scene_screenshots(
         - Generated images are saved with the same base name as the USD file
         - Default lighting is added to scenes that may not have proper illumination
     """
-    from robolab.core.utils.file_utils import find_usd_files
-    from robolab.core.utils.render_utils import render_stage_frame
+    from policyloop.core.utils.file_utils import find_usd_files
+    from policyloop.core.utils.render_utils import render_stage_frame
 
     if scene_files:
         usds = scene_files

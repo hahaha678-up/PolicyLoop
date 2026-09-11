@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 
-"""Pure-torch unit tests for ``robolab.core.task.hull_check``.
+"""Pure-torch unit tests for ``policyloop.core.task.hull_check``.
 
 These tests don't need IsaacSim. The ``tests/`` conftest still boots Isaac Sim
 once (because other tests need it), so for quick iteration run this file
@@ -15,7 +15,7 @@ import sys
 import numpy as np
 
 # Standalone-runner path shim: when invoked as ``python tests/test_hull_check.py``
-# from a worktree, the editable-install hook resolves ``robolab`` to the main
+# from a worktree, the editable-install hook resolves ``policyloop`` to the main
 # repo (where the install was registered), not the worktree. Pytest works
 # without this because cwd is already on sys.path. No-op when worktree root is
 # already on sys.path (e.g. pytest, or running from worktree root).
@@ -25,7 +25,7 @@ if _WORKTREE_ROOT not in sys.path:
 
 import torch  # noqa: E402
 
-from robolab.core.task.hull_check import LocalHull, build_local_hull, open_top_planes, point_in_hull  # noqa: E402
+from policyloop.core.task.hull_check import LocalHull, build_local_hull, open_top_planes, point_in_hull  # noqa: E402
 
 
 def cube_planes(half: float = 0.5) -> torch.Tensor:

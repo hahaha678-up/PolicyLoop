@@ -2,7 +2,7 @@
 
 A **scene** is a USD file containing objects and fixtures (tables, shelves, kitchen surfaces) arranged in a spatial layout. Each [task](task.md) references a scene that defines the physical environment for the episode. Scenes should **not** contain robots, lighting, backgrounds, etc.
 
-RoboLab ships scenes in [`assets/scenes/`](../assets/scenes/). A visual catalog is in [`assets/scenes/README.md`](../assets/scenes/README.md) and metadata lives in `assets/scenes/_metadata/`.
+PolicyLoop ships scenes in [`assets/scenes/`](../assets/scenes/). A visual catalog is in [`assets/scenes/README.md`](../assets/scenes/README.md) and metadata lives in `assets/scenes/_metadata/`.
 
 ## Creating a New USD Scene
 
@@ -50,7 +50,7 @@ It is recommended that you re-open the scenes and check that all the objects you
 
 ## AI Workflows: Scene Generation
 
-The scene-generation workflow is retained in [`skills/robolab-scenegen/SKILL.md`](../skills/robolab-scenegen/SKILL.md). Ask an assistant to read that file and provide the desired objects and arrangement. The workflow covers USDA authoring, physics settling and screenshot validation using the retained generation code and assets.
+The scene-generation workflow is retained in [`skills/policyloop-scenegen/SKILL.md`](../skills/policyloop-scenegen/SKILL.md). Ask an assistant to read that file and provide the desired objects and arrangement. The workflow covers USDA authoring, physics settling and screenshot validation using the retained generation code and assets.
 
 ## To use the scenes in tasks
 
@@ -58,7 +58,7 @@ For how to use scenes in task definitions (via `import_scene` and `import_scene_
 
 ## Generating Scene Metadata
 
-RoboLab provides utility scripts for generating metadata, screenshots, and statistics for scenes. These work with any scene directory.
+PolicyLoop provides utility scripts for generating metadata, screenshots, and statistics for scenes. These work with any scene directory.
 
 ### Generate metadata (JSON, CSV, and README)
 

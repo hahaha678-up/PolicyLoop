@@ -1,10 +1,10 @@
 # Lighting
 
-RoboLab uses IsaacLab's light spawners to configure scene lighting. Lighting configs are `@configclass` objects that add light sources to the simulation and are passed as `lighting_cfg` during [environment registration](environment_registration.md). These configs can live in your own repository.
+PolicyLoop uses IsaacLab's light spawners to configure scene lighting. Lighting configs are `@configclass` objects that add light sources to the simulation and are passed as `lighting_cfg` during [environment registration](environment_registration.md). These configs can live in your own repository.
 
 ## Built-in Lighting Configurations
 
-RoboLab ships several lighting presets in `robolab/variations/lighting.py`:
+PolicyLoop ships several lighting presets in `policyloop/variations/lighting.py`:
 
 ### Sphere Lights
 
@@ -31,7 +31,7 @@ RoboLab ships several lighting presets in `robolab/variations/lighting.py`:
 Import the config and pass it as `lighting_cfg` in your registration function (see [Environment Registration](environment_registration.md#step-2-write-a-registration-function) for the full example):
 
 ```python
-from robolab.variations.lighting import SphereLightCfg
+from policyloop.variations.lighting import SphereLightCfg
 
 # Inside your register_envs() function:
 auto_discover_and_create_cfgs(
@@ -118,7 +118,7 @@ IsaacLab provides the following light spawners through `isaaclab.sim`:
 
 ## Lighting Variation for Robustness Testing
 
-To evaluate policy robustness under different lighting conditions, register multiple environment variants with different `lighting_cfg` values. See `robolab/registrations/droid/auto_env_registrations_lighting_variations.py` for a complete example.
+To evaluate policy robustness under different lighting conditions, register multiple environment variants with different `lighting_cfg` values. See `policyloop/registrations/droid/auto_env_registrations_lighting_variations.py` for a complete example.
 
 The built-in evaluation script `policies/pi0_family/run_lighting.py` runs benchmarks across lighting conditions automatically.
 

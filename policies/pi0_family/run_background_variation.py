@@ -27,7 +27,7 @@ import os
 import traceback
 import sys
 from isaaclab.app import AppLauncher
-from robolab.constants import get_timestamp, DEFAULT_TASK_SUBFOLDERS # noqa
+from policyloop.constants import get_timestamp, DEFAULT_TASK_SUBFOLDERS # noqa
 
 # add argparse arguments
 parser = argparse.ArgumentParser(description="")
@@ -50,7 +50,7 @@ parser.add_argument("--disable-subtask", "--disable_subtask", dest="enable_subta
 parser.add_argument("--record-image-data", "--record_image_data", action="store_true",
                        help="Enable proprio image data recording (default: False)")
 parser.add_argument("--output-folder-name", "--output_folder_name", type=str, default=None,
-                       help="Output folder name under /robolab/output.")
+                       help="Output folder name under /policyloop/output.")
 parser.add_argument("--enable-verbose", "--enable_verbose", action="store_true",
                        help="Verbose output (default: False)")
 parser.add_argument("--enable-debug", "--enable_debug", action="store_true",
@@ -65,20 +65,20 @@ args_cli.save_videos = True
 app_launcher = AppLauncher(args_cli)
 simulation_app = app_launcher.app
 
-from robolab.constants import PACKAGE_DIR, set_output_dir # noqa
-from robolab.core.environments.runtime import create_env # noqa
-from robolab.eval import run_episode, summarize_run # noqa
+from policyloop.constants import PACKAGE_DIR, set_output_dir # noqa
+from policyloop.core.environments.runtime import create_env # noqa
+from policyloop.eval import run_episode, summarize_run # noqa
 from policies.pi0_family.client import Pi0DroidJointposClient # noqa
-from robolab.registrations.droid.auto_env_registrations_bg_variations import auto_register_droid_envs_bg_variations # noqa
-from robolab.core.environments.factory import get_envs_by_tag # noqa
-from robolab.core.logging.results import check_all_episodes_complete, check_run_complete # noqa
-from robolab.core.logging.results import init_experiment, summarize_experiment_results # noqa
-import robolab.constants # noqa
+from policyloop.registrations.droid.auto_env_registrations_bg_variations import auto_register_droid_envs_bg_variations # noqa
+from policyloop.core.environments.factory import get_envs_by_tag # noqa
+from policyloop.core.logging.results import check_all_episodes_complete, check_run_complete # noqa
+from policyloop.core.logging.results import init_experiment, summarize_experiment_results # noqa
+import policyloop.constants # noqa
 
-robolab.constants.ENABLE_SUBTASK_PROGRESS_CHECKING = args_cli.enable_subtask
-robolab.constants.RECORD_IMAGE_DATA = args_cli.record_image_data
-robolab.constants.VERBOSE = args_cli.enable_verbose
-robolab.constants.DEBUG = args_cli.enable_debug
+policyloop.constants.ENABLE_SUBTASK_PROGRESS_CHECKING = args_cli.enable_subtask
+policyloop.constants.RECORD_IMAGE_DATA = args_cli.record_image_data
+policyloop.constants.VERBOSE = args_cli.enable_verbose
+policyloop.constants.DEBUG = args_cli.enable_debug
 
 auto_register_droid_envs_bg_variations(task_dirs=args_cli.task_dirs, tasks=args_cli.task)
 
@@ -111,7 +111,7 @@ def main():
         set_output_dir(scene_output_dir)
 
         if check_all_episodes_complete(episode_results=episode_results, env_name=task_env, num_episodes=total_episodes):
-            print(f"\033[96m[RoboLab] Task `{task_env}` already done. Skipping.\033[0m")
+            print(f"\033[96m[PolicyLoop] Task `{task_env}` already done. Skipping.\033[0m")
             continue
 
         env, env_cfg = create_env(
@@ -132,11 +132,11 @@ def main():
 
             run_episode_ids = [run_idx * num_envs + eid for eid in range(num_envs)]
             if all(check_run_complete(episode_results=episode_results, env_name=task_env, episode=ep_id) for ep_id in run_episode_ids):
-                print(f"\033[96m[RoboLab] Task `{task_env}` run `{run_idx}` already done. Skipping.\033[0m")
+                print(f"\033[96m[PolicyLoop] Task `{task_env}` run `{run_idx}` already done. Skipping.\033[0m")
                 continue
 
             run_name = task_env + f"_{run_idx}"
-            print(f"\033[96m[RoboLab] Running {run_name}: '{env_cfg.instruction}' (run {run_idx}, {num_envs} envs)\033[0m")
+            print(f"\033[96m[PolicyLoop] Running {run_name}: '{env_cfg.instruction}' (run {run_idx}, {num_envs} envs)\033[0m")
 
             env_results, msgs, timing = run_episode(env=env,
                         env_cfg=env_cfg,
@@ -158,7 +158,7 @@ def main():
                 policy=args_cli.policy,
                 episode_results=episode_results,
                 episode_results_file=episode_results_file,
-                enable_subtask_progress=robolab.constants.ENABLE_SUBTASK_PROGRESS_CHECKING,
+                enable_subtask_progress=policyloop.constants.ENABLE_SUBTASK_PROGRESS_CHECKING,
                 task_name=task_name,
                 extra_fields={
                     "background": bg_name,
@@ -180,7 +180,7 @@ if __name__ == "__main__":
     try:
         main()
     except Exception as e:
-        print(f"\033[96m[RoboLab] Terminated with error: {e}\033[0m")
+        print(f"\033[96m[PolicyLoop] Terminated with error: {e}\033[0m")
         traceback.print_exc()
         simulation_app.close()
         sys.exit(1)
